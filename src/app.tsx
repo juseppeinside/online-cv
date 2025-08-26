@@ -6,7 +6,7 @@ function App() {
       {/* <Bg /> */}
       <div className="h-screen w-screen bg-gray-100" />
       <div className="mx-auto w-[1200px] px-5">
-        <AboutMe >
+        <AboutMe />
       </div>
     </div>
   );
