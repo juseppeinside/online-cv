@@ -1,5 +1,3 @@
-import { Button } from './ui/button';
-
 const AboutMe = () => {
   return (
     <div className="flex justify-between">
@@ -13,7 +11,7 @@ const AboutMe = () => {
           Petersburg. With over 6 years of experience, I help people grow their
           businesses by providing modern and effective web solutions.
         </p>
-        <Button>Contact me</Button>
+        <button type="button">Contact me</button>
       </div>
 
       <div className="flex w-[300px] flex-col gap-5">

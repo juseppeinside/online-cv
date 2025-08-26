@@ -1,4 +1,4 @@
-function Bg() {
+const Bg = () => {
   return (
     <section className="flex h-full w-full">
       <div className="absolute flex h-full w-full">
@@ -43,6 +43,6 @@ function Bg() {
       </div>
     </section>
   );
-}
+};
 
 export default Bg;
