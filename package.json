@@ -8,9 +8,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "format": "biome format ."
+    "lint": "ultracite lint",
+    "format": "ultracite format"
   },
   "dependencies": {
     "@types/node": "^24.3.0",
