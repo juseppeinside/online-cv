@@ -1,8 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import "./assets/typography/fonts.css";
+@plugin "./assets/typography/typography.js";
+
 /* biome-ignore lint/suspicious/noUnknownAtRules: <shadcn rules> */
 @custom-variant dark (&:is(.dark *));
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Roboto Flex", sans-serif, system-ui;
+}
 
 /* biome-ignore lint/suspicious/noUnknownAtRules: <tailwind rules> */
 @theme inline {
