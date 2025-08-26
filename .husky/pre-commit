@@ -1,2 +1,2 @@
-ultracite format
-ultracite lint
+npm run format
+npm run lint

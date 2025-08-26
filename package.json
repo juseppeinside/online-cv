@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "lint": "ultracite lint",
-    "format": "ultracite format"
+    "format": "ultracite format",
+    "prepare": "husky"
   },
   "dependencies": {
     "@types/node": "^24.3.0",
