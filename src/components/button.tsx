@@ -10,7 +10,7 @@ const Button = ({
   return (
     <button
       className={cn(
-        'rounded-3xl bg-primary px-6 py-1 font-semibold text-2xl text-secondary',
+        'cursor-none cursor-pointer rounded-3xl bg-primary px-6 py-1 font-semibold text-2xl text-secondary md:cursor-none',
         className
       )}
       type="button"

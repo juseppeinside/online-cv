@@ -9,10 +9,19 @@
 @theme {
   --color-primary: #c4c4c4;
   --color-secondary: #303030;
+  --color-foreground: #c4c4c4;
+  --color-background: #303030;
 }
 
 html {
   font-size: 16px;
   line-height: 1.5;
   font-family: "Roboto Flex", sans-serif, system-ui;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  html {
+    cursor: auto;
+  }
 }
