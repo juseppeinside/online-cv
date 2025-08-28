@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @import "./assets/typography/fonts.css";
 /* biome-ignore lint/suspicious/noUnknownAtRules: <typography recomendations> */
