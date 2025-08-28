@@ -7,15 +7,20 @@ module.exports = plugin(({ addComponents }) => {
       'font-weight': '800',
       'font-size': '60px',
       'letter-spacing': '0px',
+      'line-height': '64px',
     },
-  });
-
-  addComponents({
-    '.body-small': {
+    '.h2': {
+      'font-family': 'Roboto Flex',
+      'font-weight': '700',
+      'font-size': '40px',
+      'letter-spacing': '0px',
+      'line-height': '48px',
+    },
+    '.paragraph-sm': {
       'font-family': 'Roboto Flex',
       'font-weight': '400',
-      'font-size': '12px',
-      'line-height': '16px',
+      'font-size': '18px',
+      'line-height': '24px',
     },
   });
 });
