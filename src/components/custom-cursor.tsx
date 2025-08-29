@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 gsap.registerPlugin(useGSAP);
 
@@ -85,26 +86,6 @@ const CustomCursor = () => {
     };
   }, [handleMouseEnter, handleMouseLeave]);
 
-  React.useEffect(() => {
-    if (!sparksRef.current) {
-      return;
-    }
-
-    if (isHoveringButton) {
-      gsap.fromTo(
-        sparksRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.3, ease: 'power2.out' }
-      );
-    } else {
-      gsap.to(sparksRef.current, {
-        opacity: 0,
-        duration: 0.2,
-        ease: 'power2.out',
-      });
-    }
-  }, [isHoveringButton]);
-
   const cursor = React.useMemo(
     () => (
       <path
@@ -120,15 +101,18 @@ const CustomCursor = () => {
   const sparks = React.useMemo(
     () => (
       <path
+        className={cn(
+          isHoveringButton ? 'opacity-100' : 'opacity-0',
+          'transition-opacity duration-100 ease-in-out'
+        )}
         d={SPARKS_PATH}
         fill="yellow"
         ref={sparksRef}
         stroke="orange"
         strokeWidth="0.2"
-        style={{ opacity: 0 }}
       />
     ),
-    []
+    [isHoveringButton]
   );
 
   const shouldRender = React.useMemo(() => isDesktop(), []);
@@ -143,10 +127,8 @@ const CustomCursor = () => {
       ref={svgRef}
     >
       <svg
-        fill="none"
-        height="35"
+        className="h-[35px] w-[35px]"
         viewBox="0 0 17 17"
-        width="35"
         xmlns="http://www.w3.org/2000/svg"
       >
         <title>Custom cursor</title>
