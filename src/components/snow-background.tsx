@@ -72,7 +72,7 @@ const SnowBackground = () => {
 
   return (
     <div
-      className="pointer-events-none fixed top-0 left-0 z-[5] h-screen w-screen overflow-hidden"
+      className="pointer-events-none fixed top-0 left-0 z-20 h-screen w-screen overflow-hidden"
       ref={containerRef}
     >
       {new Array(SNOWFLAKE_COUNT).fill(0).map((_, index) => (
