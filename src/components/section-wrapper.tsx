@@ -1,7 +1,7 @@
 type SectionWrapperProps = {
   title: string;
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & React.HTMLAttributes<HTMLElement>;
 
 const SectionWrapper = ({
   title,
@@ -10,13 +10,13 @@ const SectionWrapper = ({
   ...other
 }: SectionWrapperProps) => {
   return (
-    <div className="flex flex-col justify-between gap-10 py-24" {...other}>
+    <section className="flex flex-col justify-between gap-10 py-24" {...other}>
       <div className="flex items-center gap-2">
         <Icon />
         <h2 className="h2 font-semibold text-xl">{title}</h2>
       </div>
       {children}
-    </div>
+    </section>
   );
 };
 
