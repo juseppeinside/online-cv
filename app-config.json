@@ -1,0 +1,40 @@
+{
+  "aboutMe": {
+    "title": "Frontend\nDeveloper",
+    "description": "Hello! I'm Nick Name, an experienced Frontend web developer from Saint Petersburg. With over 6 years of experience, I help people grow their businesses by providing modern and effective web solutions.",
+    "years": 6,
+    "hours": 10,
+    "projectCount": 10
+  },
+  "myStack": {
+    "blocks": [
+      {
+        "title": "FRONTEND",
+        "items": [
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Next.Js",
+          "MobX",
+          "TailwindCSS"
+        ]
+      },
+      {
+        "title": "TEST",
+        "items": ["Jest"]
+      },
+      {
+        "title": "BACKEND",
+        "items": ["Node.Js"]
+      },
+      {
+        "title": "DATABASE",
+        "items": ["MySQL", "PostgreSQL", "Prisma"]
+      },
+      {
+        "title": "TOOLS",
+        "items": ["Git", "Docker"]
+      }
+    ]
+  }
+}
