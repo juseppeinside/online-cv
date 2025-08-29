@@ -17,6 +17,9 @@ html {
   color: var(--color-primary);
   line-height: 1.5;
   font-family: "Roboto Flex", sans-serif, system-ui;
+}
+
+html:not([data-dev-mode="true"]) {
   cursor: none;
 }
 

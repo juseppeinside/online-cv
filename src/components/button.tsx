@@ -7,10 +7,13 @@ const Button = ({
   children: React.ReactNode;
   className?: string;
 }) => {
+  const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
+
   return (
     <button
       className={cn(
-        'cursor-none cursor-pointer rounded-3xl bg-primary px-6 py-1 font-semibold text-2xl text-secondary md:cursor-none',
+        'cursor-pointer rounded-3xl bg-primary px-6 py-1 font-semibold text-2xl text-secondary',
+        !isDevMode && 'cursor-none md:cursor-none',
         className
       )}
       type="button"

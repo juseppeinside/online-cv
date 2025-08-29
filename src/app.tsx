@@ -13,6 +13,14 @@ type AppConfigType = {
 const App = () => {
   const fetchJSON = React.use(appConfig) as AppConfigType;
 
+  React.useEffect(() => {
+    const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
+    document.documentElement.setAttribute(
+      'data-dev-mode',
+      isDevMode.toString()
+    );
+  }, []);
+
   return (
     <div className="bg-secondary">
       {/* <Bg /> */}

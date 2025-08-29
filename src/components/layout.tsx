@@ -11,6 +11,8 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
+const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
+
 const Layout = ({ children }: LayoutProps) => {
   useGSAP(() => {
     ScrollSmoother.create({
@@ -25,7 +27,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </div>
       <SnowBackground />
-      <CustomCursor />
+      {!isDevMode && <CustomCursor />}
     </div>
   );
 };

@@ -16,7 +16,16 @@
           "React",
           "Next.Js",
           "MobX",
-          "TailwindCSS"
+          "Redux",
+          "tailwindcss",
+          "CSS",
+          "HTML",
+          "GSAP",
+          "Mapbox",
+          "Radix UI",
+          "react-hook-form",
+          "vite",
+          "webpack"
         ]
       },
       {
