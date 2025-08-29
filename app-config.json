@@ -1,4 +1,7 @@
 {
+  "firstScreen": {
+    "title": "Nick Name"
+  },
   "aboutMe": {
     "title": "Frontend\nDeveloper",
     "description": "Hello! I'm Nick Name, an experienced Frontend web developer from Saint Petersburg. With over 6 years of experience, I help people grow their businesses by providing modern and effective web solutions.",

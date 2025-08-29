@@ -62,8 +62,8 @@ const AboutMe = ({
   );
 
   return (
-    <div
-      className="flex flex-col justify-between gap-20 py-24 md:flex-row"
+    <section
+      className="sticky mx-auto flex w-full max-w-[1200px] flex-col justify-between gap-20 py-24 md:flex-row"
       id="about-me"
       ref={containerRef}
     >
@@ -89,7 +89,7 @@ const AboutMe = ({
           <p className={textClass}>Hours of work</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
