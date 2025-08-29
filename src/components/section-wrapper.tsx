@@ -11,7 +11,7 @@ const SectionWrapper = ({
 }: SectionWrapperProps) => {
   return (
     <section
-      className="mx-auto flex min-h-screen w-full max-w-[1200px] flex-col justify-between gap-10 py-24"
+      className="mx-auto flex w-full max-w-[1200px] flex-col justify-between gap-10 py-24"
       {...other}
     >
       <div className="flex items-center gap-2">
