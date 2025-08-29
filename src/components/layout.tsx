@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CustomCursor from './custom-cursor';
-import SnowBackground from './snow-background';
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP);
 
@@ -23,10 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div id="smooth-wrapper">
-      <div className="relative z-10 bg-secondary" id="smooth-content">
-        {children}
-      </div>
-      <SnowBackground />
+      <div id="smooth-content">{children}</div>
       {!isDevMode && <CustomCursor />}
     </div>
   );

@@ -1,12 +1,13 @@
 import { cn } from '@/lib/utils';
 
 const Button = ({
-  children,
   className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+  children,
+  ...other
+}: React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>) => {
   const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
 
   return (
@@ -17,6 +18,7 @@ const Button = ({
         className
       )}
       type="button"
+      {...other}
     >
       {children}
     </button>
