@@ -2,7 +2,7 @@
 
 A modern interactive portfolio built with React, TypeScript, GSAP, and Tailwind CSS. Features beautiful animations, smooth scrolling, and atmospheric visual effects.
 
-[🇷🇺 Русская версия](README.ru.md)
+EN / [RU](README.ru.md)
 
 ## 🛠 Technologies
 
