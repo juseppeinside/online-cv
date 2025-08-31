@@ -6,25 +6,57 @@
 
 /* biome-ignore lint/suspicious/noUnknownAtRules: <tailwind requirement> */
 @theme {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-background: var(--color-background);
+}
+
+.theme-button {
+  background-color: var(--color-primary);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: 24px;
+}
+
+/* Light theme */
+.light {
+  .theme-button {
+    -webkit-mask-image: url("@/assets/icons/moon-ico.svg?react");
+  }
+  color-scheme: light;
   --color-primary: #c4c4c4;
   --color-secondary: #303030;
-  --color-foreground: #c4c4c4;
   --color-background: #303030;
 }
 
-html {
+/* Dark theme */
+.dark {
+  .theme-button {
+    -webkit-mask-image: url("@/assets/icons/sun-ico.svg?react");
+  }
+  color-scheme: dark;
+  --color-primary: #303030;
+  --color-secondary: #c4c4c4;
+  --color-background: #c4c4c4;
+}
+
+:root {
   font-size: 16px;
-  color: var(--color-primary);
   line-height: 1.5;
   font-family: "Roboto Flex", sans-serif, system-ui;
 }
+* {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+}
 
-html:not([data-dev-mode="true"]) {
+:root:not([data-dev-mode="true"]) {
   cursor: none;
 }
 
 @media (max-width: 768px) {
-  html {
+  :root {
     cursor: auto;
   }
 }

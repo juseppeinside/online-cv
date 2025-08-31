@@ -104,7 +104,7 @@ const SnowBackground = () => {
     >
       {new Array(SNOWFLAKE_COUNT).fill(0).map((_, index) => (
         <div
-          className="snowflake absolute rounded-full bg-white/90 shadow-[0_0_8px_rgba(255,255,255,0.8),_0_0_16px_rgba(255,255,255,0.4)]"
+          className="snowflake absolute rounded-full bg-primary/90"
           key={`snowflake-${Date.now()}-${index}`}
         />
       ))}

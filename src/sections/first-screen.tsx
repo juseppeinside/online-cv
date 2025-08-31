@@ -11,6 +11,21 @@ export type FirstScreenProps = {
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const FirstScreen = ({ title }: FirstScreenProps) => {
+  const toggleTheme = () => {
+    const theme = localStorage.getItem('theme');
+
+    const newThemeValue =
+      (theme ??
+        (window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light')) === 'dark'
+        ? 'light'
+        : 'dark';
+
+    document.body.classList.value = newThemeValue;
+    localStorage.setItem('theme', newThemeValue);
+  };
+
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -43,7 +58,7 @@ const FirstScreen = ({ title }: FirstScreenProps) => {
   return (
     <section className="relative h-screen w-screen" id="firstScreen">
       <div className="absolute top-1/3 z-30 flex w-full flex-col items-center gap-5">
-        <h1 className="h1 text-[90px] text-secondary">{title}</h1>
+        <h1 className="h1 text-[90px]">{title}</h1>
         <Button onClick={onClick}>About me</Button>
       </div>
       <div
@@ -54,6 +69,12 @@ const FirstScreen = ({ title }: FirstScreenProps) => {
         className="absolute z-10 h-full w-full rotate-180 bg-[url(src/assets/images/bg.png)] bg-cover bg-top bg-no-repeat"
         id="bg"
       />
+      <div className="absolute top-10 right-10 z-30 flex items-center gap-5 rounded-full bg-background">
+        <Button
+          className="theme-button flex h-8 w-8 items-center justify-center px-0"
+          onClick={toggleTheme}
+        />
+      </div>
     </section>
   );
 };

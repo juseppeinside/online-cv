@@ -2,7 +2,8 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import type React from 'react';
+import React from 'react';
+
 import CustomCursor from './custom-cursor';
 import SnowBackground from './snow-background';
 
@@ -20,6 +21,20 @@ const Layout = ({ children }: LayoutProps) => {
       smooth: 1,
       effects: true,
     });
+  }, []);
+
+  React.useLayoutEffect(() => {
+    const theme = localStorage.getItem('theme');
+
+    if (theme) {
+      document.body.classList.value = theme;
+    } else {
+      document.body.classList.value = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches
+        ? 'dark'
+        : 'light';
+    }
   }, []);
 
   return (

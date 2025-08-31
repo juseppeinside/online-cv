@@ -94,6 +94,6 @@ const AboutMe = ({
 };
 
 const numberClass = 'h2 text-center md:text-end';
-const textClass = 'paragraph-sm  md:text-end text-center';
+const textClass = 'paragraph-sm md:text-end text-center';
 
 export default AboutMe;

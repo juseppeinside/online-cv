@@ -24,9 +24,9 @@ const App = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative text-primary">
       <FirstScreen {...data.firstScreen} />
-      <section className="sticky h-full w-full rounded-t-[40px] bg-secondary px-5">
+      <section className="sticky h-full w-full rounded-t-[40px] bg-background px-5">
         <AboutMe {...data.aboutMe} />
         <MyStack {...data.myStack} />
         <AboutMe {...data.aboutMe} />

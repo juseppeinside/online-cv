@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React from 'react';
-import MyStackIcon from '@/assets/icons/my-stack-icon.svg?react';
+import MyStackIcon from '@/assets/icons/my-stack-ico.svg?react';
 import SectionWrapper from '@/components/section-wrapper';
 import { stackIcons } from '@/lib/stack-icons';
 
