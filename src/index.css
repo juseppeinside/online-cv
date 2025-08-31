@@ -30,7 +30,6 @@
   text-shadow: none;
 }
 
- 
 .light {
   .theme-button {
     -webkit-mask-image: url("@/assets/icons/sun-ico.svg?react");
@@ -41,7 +40,6 @@
   --color-background: #303030;
 }
 
- 
 .dark {
   .theme-button {
     -webkit-mask-image: url("@/assets/icons/moon-ico.svg?react");
