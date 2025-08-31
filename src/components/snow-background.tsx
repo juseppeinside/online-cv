@@ -41,8 +41,6 @@ const SnowBackground = () => {
           duration: 1,
           ease: 'power2.out',
         });
-
-        initSnowflakes();
       },
       onLeaveBack: () => {
         gsap.to(containerRef.current, {
@@ -53,53 +51,50 @@ const SnowBackground = () => {
       },
     });
 
-    function initSnowflakes() {
-      if (!containerRef.current) {
-        return;
-      }
-
-      const snowflakes = containerRef.current.querySelectorAll('.snowflake');
-
-      snowflakes.forEach((snowflake, index) => {
-        const element = snowflake;
-        const size = Math.random() * (MAX_SIZE - MIN_SIZE) + MIN_SIZE;
-
-        gsap.set(element, {
-          width: size,
-          height: size,
-          opacity: Math.random() * (MAX_OPACITY - MIN_OPACITY) + MIN_OPACITY,
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * window.innerHeight,
-          rotation: Math.random() * ROTATION_DEGREES,
-        });
-
-        const timeline = gsap.timeline({ repeat: -1 });
-
-        timeline.to(element, {
-          y: window.innerHeight + FALL_OFFSET,
-          x: `+=${Math.random() * DRIFT_RANGE - DRIFT_OFFSET}`,
-          rotation: `+=${Math.random() * ROTATION_DEGREES}`,
-          duration:
-            Math.random() * (MAX_DURATION - MIN_DURATION) + MIN_DURATION,
-          ease: 'none',
-          delay: Math.random() * MAX_DELAY,
-          onComplete: () => {
-            gsap.set(element, {
-              y: 0,
-              x: Math.random() * window.innerWidth,
-            });
-          },
-        });
-
-        gsap.to(element, {
-          x: `+=${Math.sin(Date.now() * TIME_FACTOR + index) * SWING_AMPLITUDE}`,
-          duration: SWING_DURATION,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-        });
-      });
+    if (!containerRef.current) {
+      return;
     }
+
+    const snowflakes = containerRef.current.querySelectorAll('.snowflake');
+
+    snowflakes.forEach((snowflake, index) => {
+      const element = snowflake;
+      const size = Math.random() * (MAX_SIZE - MIN_SIZE) + MIN_SIZE;
+
+      gsap.set(element, {
+        width: size,
+        height: size,
+        opacity: Math.random() * (MAX_OPACITY - MIN_OPACITY) + MIN_OPACITY,
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        rotation: Math.random() * ROTATION_DEGREES,
+      });
+
+      const timeline = gsap.timeline({ repeat: -1 });
+
+      timeline.to(element, {
+        y: window.innerHeight + FALL_OFFSET,
+        x: `+=${Math.random() * DRIFT_RANGE - DRIFT_OFFSET}`,
+        rotation: `+=${Math.random() * ROTATION_DEGREES}`,
+        duration: Math.random() * (MAX_DURATION - MIN_DURATION) + MIN_DURATION,
+        ease: 'none',
+        delay: Math.random() * MAX_DELAY,
+        onComplete: () => {
+          gsap.set(element, {
+            y: 0,
+            x: Math.random() * window.innerWidth,
+          });
+        },
+      });
+
+      gsap.to(element, {
+        x: `+=${Math.sin(Date.now() * TIME_FACTOR + index) * SWING_AMPLITUDE}`,
+        duration: SWING_DURATION,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      });
+    });
   }, []);
 
   return (
