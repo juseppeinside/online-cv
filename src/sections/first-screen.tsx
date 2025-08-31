@@ -29,7 +29,8 @@ const FirstScreen = ({ title }: FirstScreenProps) => {
       });
       tl.to('#front', {
         ease: 'sine.inOut',
-        y: 200,
+        y: -100,
+        scale: 1.1,
       });
     },
     { scope: '#firstScreen' }
@@ -46,11 +47,11 @@ const FirstScreen = ({ title }: FirstScreenProps) => {
         <Button onClick={onClick}>About me</Button>
       </div>
       <div
-        className="absolute z-20 h-full w-full bg-[url(../../public/front.png)] bg-cover bg-top bg-no-repeat"
+        className="absolute z-20 h-full w-full bg-[url(src/assets/images/front.webp)] bg-cover bg-top bg-no-repeat"
         id="front"
       />
       <div
-        className="absolute z-10 h-full w-full rotate-180 bg-[url(../../public/bg.png)] bg-cover bg-top bg-no-repeat"
+        className="absolute z-10 h-full w-full rotate-180 bg-[url(src/assets/images/bg.png)] bg-cover bg-top bg-no-repeat"
         id="bg"
       />
     </section>
