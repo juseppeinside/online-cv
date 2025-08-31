@@ -2,7 +2,9 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import type React from 'react';
 import CustomCursor from './custom-cursor';
+import SnowBackground from './snow-background';
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP);
 
@@ -21,10 +23,13 @@ const Layout = ({ children }: LayoutProps) => {
   }, []);
 
   return (
-    <div id="smooth-wrapper">
-      <div id="smooth-content">{children}</div>
+    <>
+      <div id="smooth-wrapper">
+        <div id="smooth-content">{children}</div>
+      </div>
       {!isDevMode && <CustomCursor />}
-    </div>
+      <SnowBackground />
+    </>
   );
 };
 

@@ -24,7 +24,7 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div className="relative">
       <FirstScreen {...data.firstScreen} />
       <section className="sticky h-full w-full rounded-t-[40px] bg-secondary px-5">
         <AboutMe {...data.aboutMe} />
@@ -35,7 +35,7 @@ const App = () => {
         <AboutMe {...data.aboutMe} />
         <AboutMe {...data.aboutMe} />
       </section>
-    </>
+    </div>
   );
 };
 
