@@ -1,29 +1,56 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React from 'react';
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const SNOWFLAKE_COUNT = 30;
 const MIN_SIZE = 2;
 const MAX_SIZE = 5;
-const MIN_DURATION = 30;
-const MAX_DURATION = 60;
+const MIN_DURATION = 10;
+const MAX_DURATION = 30;
 const MIN_OPACITY = 0.3;
 const MAX_OPACITY = 0.8;
 const ROTATION_DEGREES = 360;
 const FALL_OFFSET = 50;
-const DRIFT_RANGE = 100;
-const DRIFT_OFFSET = 50;
-const MAX_DELAY = 5;
-const SWING_AMPLITUDE = 30;
-const SWING_DURATION = 3;
+const DRIFT_RANGE = 50;
+const DRIFT_OFFSET = 30;
+const MAX_DELAY = 0;
+const SWING_AMPLITUDE = 20;
+const SWING_DURATION = 0;
 const TIME_FACTOR = 0.001;
 
 const SnowBackground = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    if (!containerRef.current) {
+      return;
+    }
+
+    gsap.set(containerRef.current, { opacity: 0 });
+
+    ScrollTrigger.create({
+      trigger: '#firstScreen',
+      start: 'bottom 100%',
+      end: 'bottom top',
+      onEnter: () => {
+        gsap.to(containerRef.current, {
+          opacity: 1,
+          duration: 1,
+          ease: 'power2.out',
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(containerRef.current, {
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power2.out',
+        });
+      },
+    });
+
     if (!containerRef.current) {
       return;
     }
@@ -39,7 +66,7 @@ const SnowBackground = () => {
         height: size,
         opacity: Math.random() * (MAX_OPACITY - MIN_OPACITY) + MIN_OPACITY,
         x: Math.random() * window.innerWidth,
-        y: Math.random() * -window.innerHeight,
+        y: Math.random() * window.innerHeight,
         rotation: Math.random() * ROTATION_DEGREES,
       });
 
@@ -54,7 +81,7 @@ const SnowBackground = () => {
         delay: Math.random() * MAX_DELAY,
         onComplete: () => {
           gsap.set(element, {
-            y: Math.random() * -window.innerHeight,
+            y: 0,
             x: Math.random() * window.innerWidth,
           });
         },
@@ -72,7 +99,7 @@ const SnowBackground = () => {
 
   return (
     <div
-      className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full overflow-hidden"
+      className="pointer-events-none fixed top-0 left-0 z-50 h-full w-full overflow-hidden"
       ref={containerRef}
     >
       {new Array(SNOWFLAKE_COUNT).fill(0).map((_, index) => (
