@@ -18,10 +18,22 @@
   -webkit-mask-size: 24px;
 }
 
+::selection {
+  background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+  color: #FFF;  
+  text-shadow: none;  
+}
+
+::-moz-selection {
+  background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+  color: #FFF;
+  text-shadow: none;
+}
+
 /* Light theme */
 .light {
   .theme-button {
-    -webkit-mask-image: url("@/assets/icons/moon-ico.svg?react");
+    -webkit-mask-image: url("@/assets/icons/sun-ico.svg?react");
   }
   color-scheme: light;
   --color-primary: #c4c4c4;
@@ -32,7 +44,7 @@
 /* Dark theme */
 .dark {
   .theme-button {
-    -webkit-mask-image: url("@/assets/icons/sun-ico.svg?react");
+    -webkit-mask-image: url("@/assets/icons/moon-ico.svg?react");
   }
   color-scheme: dark;
   --color-primary: #303030;
