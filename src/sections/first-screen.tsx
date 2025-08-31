@@ -32,23 +32,58 @@ const FirstScreen = ({ title }: FirstScreenProps) => {
         scrollTrigger: {
           pin: true,
           pinSpacing: false,
-          trigger: '#firstScreen',
+          trigger: '#first-screen',
           start: 'top top',
           end: 'bottom 20%',
           scrub: true,
         },
       });
-      tl.to('#bg', {
-        ease: 'sine.inOut',
-        scale: 1.2,
-      });
-      tl.to('#front', {
-        ease: 'sine.inOut',
-        y: -100,
-        scale: 1.1,
-      });
+
+      tl.add('start')
+        .to(
+          '#bg',
+          {
+            ease: 'sine.inOut',
+            scale: 1.2,
+          },
+          'start'
+        )
+        .to(
+          '#front',
+          {
+            ease: 'sine.inOut',
+            y: -100,
+            scale: 1.1,
+          },
+          'start'
+        )
+        .to(
+          '#title',
+          {
+            ease: 'power2.out',
+            y: -300,
+          },
+          'start'
+        )
+        .to(
+          '#about-me-button',
+          {
+            ease: 'power2.out',
+            opacity: 0,
+          },
+          'start'
+        )
+        .to(
+          '#tools',
+          {
+            ease: 'power2.out',
+            opacity: 1,
+            x: 300,
+          },
+          'start'
+        );
     },
-    { scope: '#firstScreen' }
+    { scope: '#first-screen' }
   );
 
   const onClick = () => {
@@ -56,10 +91,14 @@ const FirstScreen = ({ title }: FirstScreenProps) => {
   };
 
   return (
-    <section className="relative h-screen w-screen" id="firstScreen">
+    <section className="relative h-screen w-screen" id="first-screen">
       <div className="absolute top-1/3 z-30 flex w-full flex-col items-center gap-5">
-        <h1 className="h1 text-[90px]">{title}</h1>
-        <Button onClick={onClick}>About me</Button>
+        <h1 className="h1 text-[90px]" id="title">
+          {title}
+        </h1>
+        <Button id="about-me-button" onClick={onClick}>
+          About me
+        </Button>
       </div>
       <div
         className="absolute z-20 h-full w-full bg-[url(src/assets/images/front.webp)] bg-cover bg-top bg-no-repeat"
@@ -69,7 +108,10 @@ const FirstScreen = ({ title }: FirstScreenProps) => {
         className="absolute z-10 h-full w-full rotate-180 bg-[url(src/assets/images/bg.png)] bg-cover bg-top bg-no-repeat"
         id="bg"
       />
-      <div className="absolute top-10 right-10 z-30 flex items-center gap-5 rounded-full bg-background">
+      <div
+        className="absolute top-10 right-10 z-30 flex items-center gap-5 rounded-full bg-background"
+        id="tools"
+      >
         <Button
           className="theme-button flex h-8 w-8 items-center justify-center px-0"
           onClick={toggleTheme}
