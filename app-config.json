@@ -4,10 +4,35 @@
   },
   "aboutMe": {
     "title": "Frontend\nDeveloper",
-    "description": "Hello! I'm Nick Name, an experienced Frontend web developer from Saint Petersburg. With over 6 years of experience, I help people grow their businesses by providing modern and effective web solutions.",
+    "description": "Hello! I'm Nick Name, an experienced Frontend web developer from City Name. With over 6 years of experience, I help people grow their businesses by providing modern and effective web solutions.",
     "years": 6,
     "hours": 10,
     "projectCount": 10
+  },
+  "myExperience": {
+    "experience": [
+      {
+        "id": 1,
+        "company": "Company Name",
+        "position": "Frontend Developer",
+        "startDate": "2020-01-01",
+        "endDate": "2020-01-01"
+      },
+      {
+        "id": 2,
+        "company": "Company Name",
+        "position": "Frontend Developer",
+        "startDate": "2020-01-01",
+        "endDate": "2020-01-01"
+      },
+      {
+        "id": 3,
+        "company": "Company Name",
+        "position": "Frontend Developer",
+        "startDate": "2020-01-01",
+        "endDate": null
+      }
+    ]
   },
   "myStack": {
     "blocks": [
@@ -48,5 +73,32 @@
         "items": ["Git", "Docker"]
       }
     ]
-  }
+  },
+  "contacts": [
+    {
+      "id": "telegram",
+      "url": "https://t.me/wefwef",
+      "name": "telegram"
+    },
+    {
+      "id": "linkedin",
+      "url": "https://www.linkedin.com/in/wefwef",
+      "name": "linkedin"
+    },
+    {
+      "id": "github",
+      "url": "https://github.com/wefwef",
+      "name": "github"
+    },
+    {
+      "id": "email",
+      "url": "wefwef@gmail.com",
+      "name": "email"
+    },
+    {
+      "id": "phone",
+      "url": "+79999999999",
+      "name": "phone"
+    }
+  ]
 }

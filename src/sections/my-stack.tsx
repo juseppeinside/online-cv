@@ -29,7 +29,7 @@ const MyStack = ({ blocks }: MyStackProps) => {
         },
       });
 
-      tl.from('.slide-up', {
+      tl.from('#slide-up', {
         opacity: 0,
         y: 40,
         ease: 'none',
@@ -58,14 +58,14 @@ const MyStack = ({ blocks }: MyStackProps) => {
     { scope: containerRef }
   );
   const stack = blocks.map(({ title, items }) => (
-    <div className="slide-up grid gap-10 sm:grid-cols-2" key={title}>
+    <div className="grid gap-10 sm:grid-cols-2" id="slide-up" key={title}>
       <h3 className="h2">{title}</h3>
       <div className="flex flex-wrap gap-11">
         {items.map((i) => {
           const IconComponent = stackIcons[i as keyof typeof stackIcons];
 
           return (
-            <div className="slide-up flex items-center gap-3" key={i}>
+            <div className="flex items-center gap-3" id="slide-up" key={i}>
               {IconComponent && <IconComponent className="h-10 w-10" />}
               <p className="font-medium text-4xl">{i}</p>
             </div>
@@ -76,10 +76,8 @@ const MyStack = ({ blocks }: MyStackProps) => {
   ));
 
   return (
-    <SectionWrapper Icon={MyStackIcon} title="MY STACK">
-      <div className="flex flex-col gap-20" ref={containerRef}>
-        {stack}
-      </div>
+    <SectionWrapper Icon={MyStackIcon} ref={containerRef} title="My Stack">
+      <div className="flex flex-col gap-20">{stack}</div>
     </SectionWrapper>
   );
 };

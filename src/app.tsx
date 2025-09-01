@@ -2,6 +2,7 @@ import React from 'react';
 import configJSON from '../app-config.json' with { type: 'json' };
 import AboutMe, { type AboutMeProps } from './sections/about-me';
 import FirstScreen, { type FirstScreenProps } from './sections/first-screen';
+import MyExperience, { type MyExperienceProps } from './sections/my-experiense';
 import MyStack, { type MyStackProps } from './sections/my-stack';
 
 const appConfig = Promise.resolve(configJSON);
@@ -10,6 +11,7 @@ type AppConfigType = {
   firstScreen: FirstScreenProps;
   myStack: MyStackProps;
   aboutMe: AboutMeProps;
+  myExperience: MyExperienceProps;
 };
 
 const App = () => {
@@ -26,15 +28,15 @@ const App = () => {
   return (
     <div className="relative text-primary">
       <FirstScreen {...data.firstScreen} />
-      <section className="sticky h-full w-full rounded-t-[40px] bg-background px-5">
+      <div className="sticky h-full w-full rounded-t-[40px] bg-background px-5">
         <AboutMe {...data.aboutMe} />
         <MyStack {...data.myStack} />
+        <MyExperience {...data.myExperience} />
         <AboutMe {...data.aboutMe} />
         <AboutMe {...data.aboutMe} />
         <AboutMe {...data.aboutMe} />
         <AboutMe {...data.aboutMe} />
-        <AboutMe {...data.aboutMe} />
-      </section>
+      </div>
     </div>
   );
 };

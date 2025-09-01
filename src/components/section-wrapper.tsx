@@ -1,23 +1,37 @@
+import React from 'react';
+import { cn } from '@/lib/utils';
+
 type SectionWrapperProps = {
-  title: string;
-  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  title?: string;
+  Icon?: React.FC<React.SVGProps<SVGSVGElement>>;
+  className?: string;
+  ref?: React.RefObject<HTMLElement | null>;
+  id?: string;
 } & React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 
 const SectionWrapper = ({
   title,
   Icon,
   children,
+  className,
   ...other
 }: SectionWrapperProps) => {
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null);
+
   return (
     <section
-      className="mx-auto flex w-full max-w-[1200px] flex-col justify-between gap-10 py-24"
+      className={cn(
+        'mx-auto flex w-full max-w-[1200px] flex-col justify-between gap-10 py-24',
+        className
+      )}
       {...other}
     >
-      <div className="flex items-center gap-2">
-        <Icon />
-        <h2 className="h2 font-semibold text-xl">{title}</h2>
-      </div>
+      {Icon && (
+        <div className="flex items-center gap-2" id="slide-up" ref={wrapperRef}>
+          <Icon />
+          <h2 className="h2 font-semibold text-xl">{title?.toUpperCase()}</h2>
+        </div>
+      )}
       {children}
     </section>
   );
