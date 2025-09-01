@@ -2,10 +2,27 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import React from 'react';
 import HeartIcon from '@/assets/icons/heart-ico.svg?react';
+import StarIcon from '@/assets/icons/star-ico.svg?react';
+import logger from '@/lib/logger';
+
+//TODO: Вынести в отдельный API
+const repoPromise = fetch('https://api.github.com/repos').then((res) => {
+  try {
+    if (!res.ok) {
+      throw new Error('Ошибка загрузки');
+    }
+    return res.json();
+  } catch (error) {
+    logger.error('Error fetching repo >>>', error);
+    return null;
+  }
+});
 
 const End = () => {
-  const textRef = React.useRef<HTMLParagraphElement | null>(null);
-  const ref = React.useRef<HTMLDivElement | null>(null);
+  const repo = React.use(repoPromise);
+
+  const svgRef = React.useRef<HTMLSpanElement | null>(null);
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
@@ -20,20 +37,20 @@ const End = () => {
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (wrapperRef.current) {
+      observer.observe(wrapperRef.current);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (wrapperRef.current) {
+        observer.unobserve(wrapperRef.current);
       }
     };
   }, []);
 
   useGSAP(
     (context) => {
-      gsap.to(textRef.current, {
+      gsap.to(svgRef.current, {
         repeat: -1,
         yoyo: true,
         ease: 'bounce',
@@ -50,22 +67,28 @@ const End = () => {
         context?.revert();
       }
     },
-    { scope: textRef, dependencies: [isVisible] }
+    { scope: svgRef, dependencies: [isVisible] }
   );
 
   return (
     <div
       className="flex h-72 w-full flex-col items-center justify-center gap-4"
-      ref={ref}
+      ref={wrapperRef}
     >
       <p className="inline-block text-center">
         make with{' '}
-        <span className="inline-block" ref={textRef}>
+        <span className="inline-block" ref={svgRef}>
           <HeartIcon className="inline-block h-4 w-4 align-middle text-red-500" />
         </span>{' '}
         for dear HRs
       </p>
       <p>this resume on github</p>
+      {repo && (
+        <div className="flex items-center gap-1">
+          <StarIcon className="h-4 w-4" />
+          <p>{repo.stargazers_count}</p>
+        </div>
+      )}
     </div>
   );
 };

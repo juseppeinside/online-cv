@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import React from 'react';
 import ContactIcon from '@/assets/icons/contact-ico.svg?react';
 import SectionWrapper from '@/components/section-wrapper';
-import { formatContactCode } from '@/utils/contact-adapter';
+import { formatContactCode } from '@/lib/contact-adapter';
 
 export type ContactsProps = {
   contacts: {
@@ -51,22 +51,20 @@ const Contacts = ({ contacts }: ContactsProps) => {
     { scope: containerRef }
   );
 
+  const contactsList = contacts.map((contact) => (
+    <div
+      className="grid grid-cols-1 items-center gap-2 sm:grid-cols-[repeat(2,200px)] sm:gap-10"
+      id="slide-up"
+      key={contact.code}
+    >
+      <h2 className="h2 text-start uppercase sm:text-end">{contact.name}</h2>
+      <p className="">{formatContactCode(contact.name, contact.code)}</p>
+    </div>
+  ));
+
   return (
     <SectionWrapper Icon={ContactIcon} ref={containerRef} title="Contacts">
-      <div className="flex flex-col gap-10">
-        {contacts.map((contact) => (
-          <div
-            className="grid grid-cols-1 items-center gap-2 sm:grid-cols-[repeat(2,200px)] sm:gap-10"
-            id="slide-up"
-            key={contact.code}
-          >
-            <h2 className="h2 text-start uppercase sm:text-end">
-              {contact.name}
-            </h2>
-            <p className="">{formatContactCode(contact.name, contact.code)}</p>
-          </div>
-        ))}
-      </div>
+      <div className="flex flex-col gap-10">{contactsList}</div>
     </SectionWrapper>
   );
 };
