@@ -5,27 +5,59 @@ import HeartIcon from '@/assets/icons/heart-ico.svg?react';
 
 const End = () => {
   const textRef = React.useRef<HTMLParagraphElement | null>(null);
+  const ref = React.useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry?.isIntersecting ?? false);
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
 
   useGSAP(
-    () => {
+    (context) => {
       gsap.to(textRef.current, {
         repeat: -1,
         yoyo: true,
-        ease: 'sine.out',
+        ease: 'bounce',
         stagger: {
-          each: 0.1,
+          each: 1,
           repeat: -1,
           yoyo: true,
         },
         scale: 0.9,
         scrub: true,
       });
+
+      if (!isVisible) {
+        context?.revert();
+      }
     },
-    { scope: textRef }
+    { scope: textRef, dependencies: [isVisible] }
   );
 
   return (
-    <div className="flex h-[300px] w-full flex-col items-center justify-center gap-4">
+    <div
+      className="flex h-72 w-full flex-col items-center justify-center gap-4"
+      ref={ref}
+    >
       <p className="inline-block text-center">
         make with{' '}
         <span className="inline-block" ref={textRef}>
