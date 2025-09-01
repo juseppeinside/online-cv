@@ -74,31 +74,33 @@
       }
     ]
   },
-  "contacts": [
-    {
-      "id": "telegram",
-      "url": "https://t.me/wefwef",
-      "name": "telegram"
-    },
-    {
-      "id": "linkedin",
-      "url": "https://www.linkedin.com/in/wefwef",
-      "name": "linkedin"
-    },
-    {
-      "id": "github",
-      "url": "https://github.com/wefwef",
-      "name": "github"
-    },
-    {
-      "id": "email",
-      "url": "wefwef@gmail.com",
-      "name": "email"
-    },
-    {
-      "id": "phone",
-      "url": "+79999999999",
-      "name": "phone"
-    }
-  ]
+  "myContacts": {
+    "contacts": [
+      {
+        "code": "@nickname",
+        "url": "https://t.me/wefwef",
+        "name": "telegram"
+      },
+      {
+        "code": "in/nickname-123124235",
+        "url": "https://www.linkedin.com/in/wefwef",
+        "name": "linkedin"
+      },
+      {
+        "code": "@nickname",
+        "url": "https://github.com/wefwef",
+        "name": "github"
+      },
+      {
+        "code": "+79999999999",
+        "url": "+79999999999",
+        "name": "phone"
+      },
+      {
+        "code": "nickname@gmail.com",
+        "url": "wefwef@gmail.com",
+        "name": "email"
+      }
+    ]
+  }
 }

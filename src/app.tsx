@@ -1,6 +1,8 @@
 import React from 'react';
 import configJSON from '../app-config.json' with { type: 'json' };
 import AboutMe, { type AboutMeProps } from './sections/about-me';
+import Contacts, { type ContactsProps } from './sections/contacts';
+import End from './sections/end';
 import FirstScreen, { type FirstScreenProps } from './sections/first-screen';
 import MyExperience, { type MyExperienceProps } from './sections/my-experiense';
 import MyStack, { type MyStackProps } from './sections/my-stack';
@@ -12,6 +14,7 @@ type AppConfigType = {
   myStack: MyStackProps;
   aboutMe: AboutMeProps;
   myExperience: MyExperienceProps;
+  myContacts: ContactsProps;
 };
 
 const App = () => {
@@ -32,10 +35,8 @@ const App = () => {
         <AboutMe {...data.aboutMe} />
         <MyStack {...data.myStack} />
         <MyExperience {...data.myExperience} />
-        <AboutMe {...data.aboutMe} />
-        <AboutMe {...data.aboutMe} />
-        <AboutMe {...data.aboutMe} />
-        <AboutMe {...data.aboutMe} />
+        <Contacts {...data.myContacts} />
+        <End />
       </div>
     </div>
   );

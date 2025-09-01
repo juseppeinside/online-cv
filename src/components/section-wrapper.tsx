@@ -29,7 +29,7 @@ const SectionWrapper = ({
       {Icon && (
         <div className="flex items-center gap-2" id="slide-up" ref={wrapperRef}>
           <Icon />
-          <h2 className="h2 font-semibold text-xl">{title?.toUpperCase()}</h2>
+          <h2 className="h2 font-semibold text-xl uppercase">{title}</h2>
         </div>
       )}
       {children}
