@@ -53,7 +53,8 @@
           "Radix UI",
           "react-hook-form",
           "vite",
-          "webpack"
+          "webpack",
+          "TanStack"
         ]
       },
       {
@@ -62,15 +63,15 @@
       },
       {
         "title": "BACKEND",
-        "items": ["Node.Js"]
+        "items": ["Node.js", "NestJS"]
       },
       {
         "title": "DATABASE",
-        "items": ["MySQL", "PostgreSQL", "Prisma"]
+        "items": ["PostgreSQL", "Prisma"]
       },
       {
         "title": "TOOLS",
-        "items": ["Git", "Docker"]
+        "items": ["Git", "Docker", "Cursor"]
       }
     ]
   },
@@ -78,17 +79,17 @@
     "contacts": [
       {
         "code": "@nickname",
-        "url": "https://t.me/wefwef",
+        "url": "https://t.me/nickname",
         "name": "telegram"
       },
       {
         "code": "in/nickname-123124235",
-        "url": "https://www.linkedin.com/in/wefwef",
+        "url": "https://www.linkedin.com/in/nickname",
         "name": "linkedin"
       },
       {
-        "code": "@nickname",
-        "url": "https://github.com/wefwef",
+        "code": "/nickname",
+        "url": "https://github.com/nickname",
         "name": "github"
       },
       {
@@ -98,7 +99,7 @@
       },
       {
         "code": "nickname@gmail.com",
-        "url": "wefwef@gmail.com",
+        "url": "nickname@gmail.com",
         "name": "email"
       }
     ]
