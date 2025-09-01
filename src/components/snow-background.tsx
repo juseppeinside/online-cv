@@ -32,7 +32,7 @@ const SnowBackground = () => {
     gsap.set(containerRef.current, { opacity: 0 });
 
     ScrollTrigger.create({
-      trigger: '#firstScreen',
+      trigger: '#first-screen',
       start: 'bottom 100%',
       end: 'bottom top',
       onEnter: () => {
