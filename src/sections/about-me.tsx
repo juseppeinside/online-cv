@@ -1,25 +1,19 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from '@/components/button';
 import SectionWrapper from '@/components/section-wrapper';
 
 export type AboutMeProps = {
-  title: string;
-  description: string;
   years: number;
   hours: number;
   projectCount: number;
 };
 
-const AboutMe = ({
-  title,
-  description,
-  years,
-  hours,
-  projectCount,
-}: AboutMeProps) => {
+const AboutMe = ({ years, hours, projectCount }: AboutMeProps) => {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const { i18n } = useTranslation();
 
   useGSAP(
     () => {
@@ -64,28 +58,30 @@ const AboutMe = ({
     <SectionWrapper className="flex-row" id="about-me" ref={containerRef}>
       <div className="flex flex-col items-start gap-5">
         <h2 className="h1 whitespace-break-spaces" id="slide-up">
-          {title}
+          {i18n.t('about.title')}
         </h2>
         <p className="paragraph-sm font-normal" id="slide-up">
-          {description}
+          {i18n.t('personal.description')}
         </p>
         <div id="slide-up">
-          <Button onClick={handleClickToContact}>Contact me</Button>
+          <Button onClick={handleClickToContact}>
+            {i18n.t('button.contacts')}
+          </Button>
         </div>
       </div>
 
       <div className="mt-5 flex w-full min-w-[200px] flex-row items-center justify-center gap-12 md:mt-28 md:min-w-0 md:flex-col md:items-end">
         <div id="slide-up">
           <p className={numberClass}>{years}+</p>
-          <p className={textClass}>Years of experience</p>
+          <p className={textClass}>{i18n.t('about.years')}</p>
         </div>
         <div id="slide-up">
           <p className={numberClass}>{projectCount}+</p>
-          <p className={textClass}>Projects completed</p>
+          <p className={textClass}>{i18n.t('about.projects')}</p>
         </div>
         <div id="slide-up">
           <p className={numberClass}>{hours}K+</p>
-          <p className={textClass}>Hours of work</p>
+          <p className={textClass}>{i18n.t('about.hours')}</p>
         </div>
       </div>
     </SectionWrapper>
