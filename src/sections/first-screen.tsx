@@ -98,7 +98,7 @@ const FirstScreen = () => {
   return (
     <section className="relative h-screen w-screen" id="first-screen">
       <div className="absolute top-1/3 z-30 flex w-full flex-col items-center gap-5">
-        <h1 className="h1 text-[90px]" id="title">
+        <h1 className="h1 text-center text-[90px]" id="title">
           {i18n.t('personal.name')}
         </h1>
         <Button id="about-me-button" onClick={onClick}>

@@ -55,33 +55,35 @@ const AboutMe = ({ years, hours, projectCount }: AboutMeProps) => {
   };
 
   return (
-    <SectionWrapper className="flex-row" id="about-me" ref={containerRef}>
-      <div className="flex flex-col items-start gap-5">
-        <h2 className="h1 whitespace-break-spaces" id="slide-up">
-          {i18n.t('about.title')}
-        </h2>
-        <p className="paragraph-sm font-normal" id="slide-up">
-          {i18n.t('personal.description')}
-        </p>
-        <div id="slide-up">
-          <Button onClick={handleClickToContact}>
-            {i18n.t('button.contacts')}
-          </Button>
+    <SectionWrapper ref={containerRef}>
+      <div className="flex flex-col gap-10 md:flex-row" id="about-me">
+        <div className="flex flex-col items-start gap-5">
+          <h2 className="h1 whitespace-break-spaces" id="slide-up">
+            {i18n.t('about.title')}
+          </h2>
+          <p className="paragraph-sm font-normal" id="slide-up">
+            {i18n.t('personal.description')}
+          </p>
+          <div id="slide-up">
+            <Button onClick={handleClickToContact}>
+              {i18n.t('button.contacts')}
+            </Button>
+          </div>
         </div>
-      </div>
 
-      <div className="mt-5 flex w-full min-w-[200px] flex-row items-center justify-center gap-12 md:mt-28 md:min-w-0 md:flex-col md:items-end">
-        <div id="slide-up">
-          <p className={numberClass}>{years}+</p>
-          <p className={textClass}>{i18n.t('about.years')}</p>
-        </div>
-        <div id="slide-up">
-          <p className={numberClass}>{projectCount}+</p>
-          <p className={textClass}>{i18n.t('about.projects')}</p>
-        </div>
-        <div id="slide-up">
-          <p className={numberClass}>{hours}K+</p>
-          <p className={textClass}>{i18n.t('about.hours')}</p>
+        <div className="mt-5 flex w-full flex-row items-center justify-center gap-12 md:mt-28 md:flex-col md:items-end">
+          <div id="slide-up">
+            <p className={numberClass}>{years}+</p>
+            <p className={textClass}>{i18n.t('about.years')}</p>
+          </div>
+          <div id="slide-up">
+            <p className={numberClass}>{projectCount}+</p>
+            <p className={textClass}>{i18n.t('about.projects')}</p>
+          </div>
+          <div id="slide-up">
+            <p className={numberClass}>{hours}K+</p>
+            <p className={textClass}>{i18n.t('about.hours')}</p>
+          </div>
         </div>
       </div>
     </SectionWrapper>
