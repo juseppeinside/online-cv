@@ -1,6 +1,6 @@
-# Portfolio
+# CV
 
-A modern interactive portfolio built with React, TypeScript, GSAP, and Tailwind CSS. Features beautiful animations, smooth scrolling, and atmospheric visual effects.
+A modern interactive CV built with React, TypeScript, GSAP, and Tailwind CSS. Features beautiful animations, smooth scrolling, and atmospheric visual effects.
 
 EN / [RU](README.ru.md)
 
@@ -8,7 +8,7 @@ EN / [RU](README.ru.md)
 
 - **Frontend**: React 19, TypeScript
 - **Styling**: Tailwind CSS
-- **Animations**: GSAP (GreenSock Animation Platform)
+- **Animations**: GSAP
 - **Build Tool**: Vite
 - **Linting**: Biome
 

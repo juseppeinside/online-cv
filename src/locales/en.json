@@ -1,8 +1,8 @@
 {
   "language": "en",
   "personal": {
-    "name": "John Doe",
-    "description": "Hello! I'm Nick Name, an experienced Frontend web developer from City Name. With over 6 years of experience, I help people grow their businesses by providing modern and effective web solutions."
+    "name": "Shkividorov Maxim",
+    "description": "Hello! I'm Maxim, an experienced Frontend web developer from Saint-Petersburg. With over 6 years of experience, I help people grow their businesses by providing modern and effective web solutions."
   },
   "present": "Present",
   "button": {
@@ -26,7 +26,8 @@
   "experience": {
     "developer": "Frontend Developer",
     "middle": "Middle Frontend Developer",
-    "junior": "Junior Frontend Developer"
+    "junior": "Junior Frontend Developer",
+    "intern": "Intern Frontend Developer"
   },
   "about": {
     "title": "Frontend\nDeveloper",

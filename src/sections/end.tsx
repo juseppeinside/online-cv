@@ -7,7 +7,9 @@ import StarIcon from '@/assets/icons/star-ico.svg?react';
 import logger from '@/lib/logger';
 
 //TODO: Вынести в отдельный API
-const repoPromise = fetch('https://api.github.com/repos').then((res) => {
+const repoPromise = fetch(
+  'https://api.github.com/repos/juseppeinside/online-cv'
+).then((res) => {
   try {
     if (!res.ok) {
       throw new Error('Ошибка загрузки');
@@ -85,7 +87,9 @@ const End = () => {
         </span>
         {i18n.t('end.after')}
       </p>
-      <p>{i18n.t('end.text')}</p>
+      <a href="https://github.com/juseppeinside/online-cv">
+        {i18n.t('end.text')}
+      </a>
       {repo && (
         <div className="flex items-center gap-1">
           <StarIcon className="h-4 w-4" />

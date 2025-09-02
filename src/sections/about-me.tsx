@@ -55,8 +55,8 @@ const AboutMe = ({ years, hours, projectCount }: AboutMeProps) => {
   };
 
   return (
-    <SectionWrapper ref={containerRef}>
-      <div className="flex flex-col gap-10 md:flex-row" id="about-me">
+    <SectionWrapper id="about-me" ref={containerRef}>
+      <div className="flex flex-col gap-10 md:flex-row">
         <div className="flex flex-col items-start gap-5">
           <h2 className="h1 whitespace-break-spaces" id="slide-up">
             {i18n.t('about.title')}

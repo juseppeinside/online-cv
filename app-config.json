@@ -8,23 +8,30 @@
     "experience": [
       {
         "id": 1,
-        "company": "Company Name",
-        "position": "junior",
-        "startDate": "2020-01-01",
-        "endDate": "2020-01-01"
+        "company": "Saint Petersburg Peter the Great Polytechnic University (SPbPU)",
+        "position": "intern",
+        "startDate": "2019-02-01",
+        "endDate": "2019-04-01"
       },
       {
         "id": 2,
-        "company": "Company Name",
-        "position": "developer",
-        "startDate": "2020-01-01",
-        "endDate": "2020-01-01"
+        "company": "Sreda Solutions",
+        "position": "junior",
+        "startDate": "2019-08-01",
+        "endDate": "2020-08-01"
       },
       {
         "id": 3,
-        "company": "Company Name",
+        "company": "Simble",
         "position": "middle",
-        "startDate": "2020-01-01",
+        "startDate": "2020-09-01",
+        "endDate": "2021-10-01"
+      },
+      {
+        "id": 4,
+        "company": "Sintez-AT",
+        "position": "developer",
+        "startDate": "2021-11-01",
         "endDate": null
       }
     ]
@@ -73,28 +80,28 @@
   "myContacts": {
     "contacts": [
       {
-        "code": "@nickname",
-        "url": "https://t.me/nickname",
+        "code": "@soutjuseppe",
+        "url": "https://t.me/soutjuseppe",
         "name": "telegram"
       },
       {
-        "code": "in/nickname-123124235",
-        "url": "https://www.linkedin.com/in/nickname",
+        "code": "in/maxim-shkividorov-182815144",
+        "url": "https://www.linkedin.com/in/maxim-shkividorov-182815144/",
         "name": "linkedin"
       },
       {
-        "code": "/nickname",
-        "url": "https://github.com/nickname",
+        "code": "/juseppeinside",
+        "url": "https://github.com/juseppeinside",
         "name": "github"
       },
       {
-        "code": "+79999999999",
-        "url": "+79999999999",
+        "code": "+79992105952",
+        "url": "+79992105952",
         "name": "phone"
       },
       {
-        "code": "nickname@gmail.com",
-        "url": "nickname@gmail.com",
+        "code": "maksimshkiv@mail.ru",
+        "url": "maksimshkiv@mail.ru",
         "name": "email"
       }
     ]
