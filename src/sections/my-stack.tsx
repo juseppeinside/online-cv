@@ -61,7 +61,7 @@ const MyStack = ({ blocks }: MyStackProps) => {
   );
   const stack = blocks.map(({ title, items }) => (
     <div className="grid gap-10 sm:grid-cols-2" id="slide-up" key={title}>
-      <h3 className="h2">{i18n.t(`stack.${title}`)}</h3>
+      <h3 className="h2 uppercase">{i18n.t(`stack.${title}`)}</h3>
       <div className="flex flex-wrap gap-11">
         {items.map((i) => {
           const IconComponent = stackIcons[i as keyof typeof stackIcons];
