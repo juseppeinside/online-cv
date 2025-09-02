@@ -17,9 +17,12 @@
     "clsx": "^2.1.1",
     "dayjs": "^1.11.18",
     "gsap": "^3.13.0",
+    "i18next": "^25.4.2",
+    "i18next-browser-languagedetector": "^8.2.0",
     "pino": "^9.9.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-i18next": "^15.7.3",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {

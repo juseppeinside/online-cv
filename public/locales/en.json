@@ -1,0 +1,47 @@
+{
+  "language": "en",
+  "personal": {
+    "name": "John Doe",
+    "description": "Hello! I'm Nick Name, an experienced Frontend web developer from City Name. With over 6 years of experience, I help people grow their businesses by providing modern and effective web solutions."
+  },
+  "present": "Present",
+  "button": {
+    "contacts": "Contact me",
+    "about": "About me"
+  },
+  "stack": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Database",
+    "test": "Test",
+    "tools": "Tools"
+  },
+  "contacts": {
+    "telegram": "Telegram",
+    "linkedin": "Linkedin",
+    "github": "GitHub",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "experience": {
+    "developer": "Frontend Developer",
+    "middle": "Middle Frontend Developer",
+    "junior": "Junior Frontend Developer"
+  },
+  "about": {
+    "title": "Frontend\nDeveloper",
+    "years": "Years of experience",
+    "projects": "Projects completed",
+    "hours": "Hours of work"
+  },
+  "section": {
+    "stack": "My stack",
+    "experience": "My experience",
+    "contacts": "My contacts"
+  },
+  "end": {
+    "before": "make with",
+    "after": "for dear HRs",
+    "text": "this resume on github"
+  }
+}

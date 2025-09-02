@@ -2,28 +2,32 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from 'react-i18next';
 import Button from '@/components/button';
-
-export type FirstScreenProps = {
-  title: string;
-};
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const FirstScreen = ({ title }: FirstScreenProps) => {
-  const toggleTheme = () => {
-    const theme = localStorage.getItem('theme');
+const FirstScreen = () => {
+  const { i18n } = useTranslation();
 
-    const newThemeValue =
-      (theme ??
-        (window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light')) === 'dark'
-        ? 'light'
-        : 'dark';
+  const toggleTheme = () => {
+    let theme = localStorage.getItem('theme');
+
+    if (!theme) {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+    }
+
+    const newThemeValue = theme === 'dark' ? 'light' : 'dark';
 
     document.body.classList.value = newThemeValue;
     localStorage.setItem('theme', newThemeValue);
+  };
+
+  const toggleLanguage = () => {
+    const newValue = i18n.language === 'ru' ? 'en' : 'ru';
+    i18n.changeLanguage(newValue);
   };
 
   useGSAP(
@@ -94,10 +98,10 @@ const FirstScreen = ({ title }: FirstScreenProps) => {
     <section className="relative h-screen w-screen" id="first-screen">
       <div className="absolute top-1/3 z-30 flex w-full flex-col items-center gap-5">
         <h1 className="h1 text-[90px]" id="title">
-          {title}
+          {i18n.t('personal.name')}
         </h1>
         <Button id="about-me-button" onClick={onClick}>
-          About me
+          {i18n.t('button.about')}
         </Button>
       </div>
       <div
@@ -109,13 +113,21 @@ const FirstScreen = ({ title }: FirstScreenProps) => {
         id="bg"
       />
       <div
-        className="absolute top-10 right-10 z-30 flex items-center gap-5 rounded-full bg-background"
+        className="absolute top-10 right-10 z-30 flex items-center gap-3"
         id="tools"
       >
         <Button
-          className="theme-button flex h-8 w-8 items-center justify-center px-0"
-          onClick={toggleTheme}
-        />
+          className="h-8 w-8 rounded-full bg-background p-0 text-md text-primary uppercase"
+          onClick={toggleLanguage}
+        >
+          {i18n.t('language')}
+        </Button>
+        <div className="h-8 w-8 rounded-full bg-background">
+          <Button
+            className="theme-button flex h-8 w-8 px-0"
+            onClick={toggleTheme}
+          />
+        </div>
       </div>
     </section>
   );
