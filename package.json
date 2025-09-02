@@ -1,8 +1,22 @@
 {
-  "name": "portfolio",
+  "name": "online-cv",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "Modern interactive CV built with React, TypeScript, GSAP, and Tailwind CSS",
+  "author": {
+    "name": "Shkividorov Maxim",
+    "email": "maksimshkiv@mail.ru",
+    "url": "https://github.com/juseppeinside"
+  },
+  "keywords": [
+    "cv",
+    "react",
+    "typescript",
+    "gsap",
+    "tailwindcss",
+    "vite"
+  ],
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
