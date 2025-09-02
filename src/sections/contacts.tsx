@@ -27,7 +27,7 @@ const Contacts = ({ contacts }: ContactsProps) => {
         },
       });
 
-      tlStart.from('#slide-up', {
+      tlStart.from('#contacts', {
         opacity: 0,
         x: 150,
         ease: 'none',
@@ -53,12 +53,14 @@ const Contacts = ({ contacts }: ContactsProps) => {
 
   const contactsList = contacts.map((contact) => (
     <div
-      className="grid grid-cols-1 items-center gap-2 sm:grid-cols-[repeat(2,200px)] sm:gap-10"
-      id="slide-up"
+      className="grid grid-cols-1 items-center gap-6 after:col-span-full after:block after:h-0.5 after:w-full after:bg-primary after:content-[''] last:after:hidden sm:grid-cols-[repeat(2,minmax(0,1fr))]"
+      id="contacts"
       key={contact.code}
     >
-      <h2 className="h2 text-start uppercase sm:text-end">{contact.name}</h2>
-      <p className="">{formatContactCode(contact.name, contact.code)}</p>
+      <h2 className="h2 uppercase">{contact.name}</h2>
+      <p className="text-2xl">
+        {formatContactCode(contact.name, contact.code)}
+      </p>
     </div>
   ));
 

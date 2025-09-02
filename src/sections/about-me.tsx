@@ -56,6 +56,10 @@ const AboutMe = ({
     { scope: containerRef }
   );
 
+  const handleClickToContact = () => {
+    gsap.to(window, { duration: 1, scrollTo: '#contacts' });
+  };
+
   return (
     <SectionWrapper className="flex-row" id="about-me" ref={containerRef}>
       <div className="flex flex-col items-start gap-5">
@@ -66,7 +70,7 @@ const AboutMe = ({
           {description}
         </p>
         <div id="slide-up">
-          <Button>Contact me</Button>
+          <Button onClick={handleClickToContact}>Contact me</Button>
         </div>
       </div>
 
