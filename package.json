@@ -2,12 +2,14 @@
   "name": "online-cv",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "description": "Modern interactive CV built with React, TypeScript, GSAP, and Tailwind CSS",
   "author": {
     "name": "Shkividorov Maxim",
     "email": "maksimshkiv@mail.ru",
     "url": "https://github.com/juseppeinside"
   },
+
   "keywords": [
     "cv",
     "react",
