@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/performance/noImgElement: <background images lazy loading> */
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
@@ -104,13 +105,25 @@ const FirstScreen = () => {
           {i18n.t('button.about')}
         </Button>
       </div>
-      <div
-        className="absolute z-20 h-full w-full bg-[url(src/assets/images/front.webp)] bg-cover bg-top bg-no-repeat"
+      <img
+        alt="front-image-argonaut"
+        className="absolute z-20 h-full w-full object-cover object-top"
+        decoding="async"
+        height="1080"
         id="front"
+        loading="eager"
+        src="/images/front.webp"
+        width="1920"
       />
-      <div
-        className="absolute z-10 h-full w-full rotate-180 bg-[url(src/assets/images/bg.png)] bg-cover bg-top bg-no-repeat"
+      <img
+        alt="background-clouds"
+        className="absolute z-10 h-full w-full rotate-180 object-cover object-top"
+        decoding="async"
+        height="1080"
         id="bg"
+        loading="eager"
+        src="/images/bg.webp"
+        width="1920"
       />
       <div
         className="absolute top-10 right-10 z-30 flex items-center gap-3"
