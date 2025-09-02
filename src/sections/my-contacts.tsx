@@ -69,6 +69,7 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
   return (
     <SectionWrapper
       Icon={ContactIcon}
+      id="contacts"
       ref={containerRef}
       title={i18n.t('section.contacts')}
     >
