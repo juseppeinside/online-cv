@@ -6,7 +6,7 @@ EN / [RU](README.ru.md)
 
 <img width="100%" height="871" alt="изображение" src="https://github.com/user-attachments/assets/0959a0e9-a04c-421a-ad39-7dd9ee23b0e5" />
 
-[Demo](http://localhost:5173/)
+[Demo](https://online-cv-eta.vercel.app/)
 
 ## 🛠 Technologies
 
