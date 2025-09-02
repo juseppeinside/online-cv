@@ -67,8 +67,6 @@ npm run dev
 - [x] MyExperience - work experience
 - [x] Contacts - contact information
 - [x] End - closing section
-- [ ] Portfolio/Projects - project portfolio
-- [ ] Testimonials - client testimonials
 - [ ] Blog - blog/articles
 
 ### 🔧 Functionality
