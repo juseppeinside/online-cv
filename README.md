@@ -74,7 +74,7 @@ npm run dev
 - [x] Logging with Pino
 - [x] Class utilities (clsx, tailwind-merge)
 - [x] Dark/light theme
-- [ ] Multilanguage support (i18n)
+- [x] Multilanguage support (i18n)
 - [ ] SEO optimization
 - [ ] Open Graph meta tags
 - [ ] Sitemap generation

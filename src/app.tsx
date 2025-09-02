@@ -1,20 +1,19 @@
 import React from 'react';
 import configJSON from '../app-config.json' with { type: 'json' };
 import AboutMe, { type AboutMeProps } from './sections/about-me';
-import Contacts, { type ContactsProps } from './sections/contacts';
 import End from './sections/end';
-import FirstScreen, { type FirstScreenProps } from './sections/first-screen';
+import FirstScreen from './sections/first-screen';
+import MyContacts, { type MyContactsProps } from './sections/my-contacts';
 import MyExperience, { type MyExperienceProps } from './sections/my-experiense';
 import MyStack, { type MyStackProps } from './sections/my-stack';
 
 const appConfig = Promise.resolve(configJSON);
 
 type AppConfigType = {
-  firstScreen: FirstScreenProps;
-  myStack: MyStackProps;
   aboutMe: AboutMeProps;
+  myStack: MyStackProps;
   myExperience: MyExperienceProps;
-  myContacts: ContactsProps;
+  myContacts: MyContactsProps;
 };
 
 const App = () => {
@@ -30,12 +29,12 @@ const App = () => {
 
   return (
     <div className="relative text-primary">
-      <FirstScreen {...data.firstScreen} />
+      <FirstScreen />
       <div className="sticky h-full w-full rounded-t-[40px] bg-background px-5">
         <AboutMe {...data.aboutMe} />
         <MyStack {...data.myStack} />
         <MyExperience {...data.myExperience} />
-        <Contacts {...data.myContacts} />
+        <MyContacts {...data.myContacts} />
         <End />
       </div>
     </div>

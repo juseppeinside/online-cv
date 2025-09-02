@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import HeartIcon from '@/assets/icons/heart-ico.svg?react';
 import StarIcon from '@/assets/icons/star-ico.svg?react';
 import logger from '@/lib/logger';
@@ -20,6 +21,8 @@ const repoPromise = fetch('https://api.github.com/repos').then((res) => {
 
 const End = () => {
   const repo = React.use(repoPromise);
+
+  const { i18n } = useTranslation();
 
   const svgRef = React.useRef<HTMLSpanElement | null>(null);
   const wrapperRef = React.useRef<HTMLDivElement | null>(null);
@@ -76,13 +79,13 @@ const End = () => {
       ref={wrapperRef}
     >
       <p className="inline-block text-center">
-        make with{' '}
-        <span className="inline-block" ref={svgRef}>
+        {i18n.t('end.before')}
+        <span className="inline-block px-1" ref={svgRef}>
           <HeartIcon className="inline-block h-4 w-4 align-middle text-red-500" />
-        </span>{' '}
-        for dear HRs
+        </span>
+        {i18n.t('end.after')}
       </p>
-      <p>this resume on github</p>
+      <p>{i18n.t('end.text')}</p>
       {repo && (
         <div className="flex items-center gap-1">
           <StarIcon className="h-4 w-4" />

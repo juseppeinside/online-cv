@@ -14,7 +14,7 @@ const Button = ({
     <button
       className={cn(
         'cursor-pointer rounded-lg bg-primary px-6 py-1 font-semibold text-2xl text-secondary',
-        !isDevMode && 'cursor-none md:cursor-none',
+        !isDevMode && 'cursor-none',
         className
       )}
       type="button"

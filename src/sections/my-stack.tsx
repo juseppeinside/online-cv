@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import MyStackIcon from '@/assets/icons/my-stack-ico.svg?react';
 import SectionWrapper from '@/components/section-wrapper';
 import { stackIcons } from '@/lib/stack-icons';
@@ -16,6 +17,7 @@ export type MyStackProps = {
 };
 
 const MyStack = ({ blocks }: MyStackProps) => {
+  const { i18n } = useTranslation();
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -59,7 +61,7 @@ const MyStack = ({ blocks }: MyStackProps) => {
   );
   const stack = blocks.map(({ title, items }) => (
     <div className="grid gap-10 sm:grid-cols-2" id="slide-up" key={title}>
-      <h3 className="h2">{title}</h3>
+      <h3 className="h2">{i18n.t(`stack.${title}`)}</h3>
       <div className="flex flex-wrap gap-11">
         {items.map((i) => {
           const IconComponent = stackIcons[i as keyof typeof stackIcons];
@@ -76,7 +78,11 @@ const MyStack = ({ blocks }: MyStackProps) => {
   ));
 
   return (
-    <SectionWrapper Icon={MyStackIcon} ref={containerRef} title="My Stack">
+    <SectionWrapper
+      Icon={MyStackIcon}
+      ref={containerRef}
+      title={i18n.t('section.stack')}
+    >
       <div className="flex flex-col gap-20">{stack}</div>
     </SectionWrapper>
   );

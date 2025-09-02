@@ -1,0 +1,47 @@
+{
+  "language": "ру",
+  "personal": {
+    "name": "Джон Доу",
+    "description": "Здравствуйте! Я Джон Доу, опытный фронтенд-разработчик из Город. Имея более 6 лет опыта, я помогаю людям развивать их бизнес, предоставляя современные и эффективные веб-решения."
+  },
+  "present": "По настоящее время",
+  "button": {
+    "contacts": "Свяжитесь со мной",
+    "about": "Про меня"
+  },
+  "stack": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "База данных",
+    "test": "Тесты",
+    "tools": "Инструменты"
+  },
+  "contacts": {
+    "telegram": "Telegram",
+    "linkedin": "Linkedin",
+    "github": "GitHub",
+    "phone": "Телефон",
+    "email": "Почта"
+  },
+  "experience": {
+    "developer": "Frontend Разработчик",
+    "middle": "Middle Frontend Разработчик",
+    "junior": "Junior Frontend Разработчик"
+  },
+  "about": {
+    "title": "Frontend\nРазработчик",
+    "years": "Лет опыта",
+    "projects": "Проектов завершено",
+    "hours": "Часов отработано"
+  },
+  "section": {
+    "stack": "мой стэк",
+    "experience": "мой опыт",
+    "contacts": "мои контакты"
+  },
+  "end": {
+    "before": "сделанно с",
+    "after": "для дорогих рекрутеров",
+    "text": "это резюме на github"
+  }
+}

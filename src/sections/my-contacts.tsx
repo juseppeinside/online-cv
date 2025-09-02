@@ -1,11 +1,12 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ContactIcon from '@/assets/icons/contact-ico.svg?react';
 import SectionWrapper from '@/components/section-wrapper';
 import { formatContactCode } from '@/lib/contact-adapter';
 
-export type ContactsProps = {
+export type MyContactsProps = {
   contacts: {
     code: string;
     url: string;
@@ -13,7 +14,8 @@ export type ContactsProps = {
   }[];
 };
 
-const Contacts = ({ contacts }: ContactsProps) => {
+const MyContacts = ({ contacts }: MyContactsProps) => {
+  const { i18n } = useTranslation();
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -57,7 +59,7 @@ const Contacts = ({ contacts }: ContactsProps) => {
       id="contacts"
       key={contact.code}
     >
-      <h2 className="h2 uppercase">{contact.name}</h2>
+      <h2 className="h2 uppercase">{i18n.t(`contacts.${contact.name}`)}</h2>
       <p className="text-2xl">
         {formatContactCode(contact.name, contact.code)}
       </p>
@@ -65,10 +67,14 @@ const Contacts = ({ contacts }: ContactsProps) => {
   ));
 
   return (
-    <SectionWrapper Icon={ContactIcon} ref={containerRef} title="Contacts">
+    <SectionWrapper
+      Icon={ContactIcon}
+      ref={containerRef}
+      title={i18n.t('section.contacts')}
+    >
       <div className="flex flex-col gap-10">{contactsList}</div>
     </SectionWrapper>
   );
 };
 
-export default Contacts;
+export default MyContacts;
