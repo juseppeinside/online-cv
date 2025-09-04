@@ -5,8 +5,13 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslation } from 'react-i18next';
 import Button from '@/components/button';
+import { checkIsMobile } from '@/lib/utils';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+const MOBILE_SCALE = 1.0;
+const DESKTOP_BG_SCALE = 1.2;
+const DESKTOP_FRONT_SCALE = 1.1;
 
 const FirstScreen = () => {
   const { i18n } = useTranslation();
@@ -31,6 +36,8 @@ const FirstScreen = () => {
     i18n.changeLanguage(newValue);
   };
 
+  const isMobile = checkIsMobile();
+
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -49,7 +56,7 @@ const FirstScreen = () => {
           '#bg',
           {
             ease: 'sine.inOut',
-            scale: 1.2,
+            scale: isMobile ? MOBILE_SCALE : DESKTOP_BG_SCALE,
           },
           'start'
         )
@@ -58,7 +65,7 @@ const FirstScreen = () => {
           {
             ease: 'sine.inOut',
             y: -100,
-            scale: 1.1,
+            scale: isMobile ? MOBILE_SCALE : DESKTOP_FRONT_SCALE,
           },
           'start'
         )
@@ -82,8 +89,8 @@ const FirstScreen = () => {
           '#tools',
           {
             ease: 'power2.out',
-            opacity: 1,
-            x: 300,
+            opacity: 0,
+            x: 30,
           },
           'start'
         );

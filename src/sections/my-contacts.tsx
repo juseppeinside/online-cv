@@ -31,7 +31,7 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
 
       tlStart.from('#slide-up', {
         opacity: 0,
-        x: 150,
+        y: 150,
         ease: 'none',
         stagger: 0.4,
       });

@@ -3,15 +3,9 @@ import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React from 'react';
-
+import { checkIsMobile } from '@/lib/utils';
 import CustomCursor from './custom-cursor';
 import SnowBackground from './snow-background';
-
-// const MOBILE_REGEX = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i;
-
-// function checkIsMobile() {
-//   return MOBILE_REGEX.test(navigator.userAgent);
-// }
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP);
 
@@ -22,7 +16,7 @@ type LayoutProps = {
 const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
 
 const Layout = ({ children }: LayoutProps) => {
-  // const isMobile = checkIsMobile();
+  const isMobile = checkIsMobile();
 
   useGSAP(() => {
     ScrollSmoother.create({
@@ -50,8 +44,8 @@ const Layout = ({ children }: LayoutProps) => {
       <div id="smooth-wrapper">
         <div id="smooth-content">{children}</div>
       </div>
-      {!isDevMode && <CustomCursor />}
-      <SnowBackground />
+      {!(isDevMode || isMobile) && <CustomCursor />}
+      {!isMobile && <SnowBackground />}
     </>
   );
 };
