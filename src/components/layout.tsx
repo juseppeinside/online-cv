@@ -7,6 +7,12 @@ import React from 'react';
 import CustomCursor from './custom-cursor';
 import SnowBackground from './snow-background';
 
+// const MOBILE_REGEX = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i;
+
+// function checkIsMobile() {
+//   return MOBILE_REGEX.test(navigator.userAgent);
+// }
+
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP);
 
 type LayoutProps = {
@@ -16,6 +22,8 @@ type LayoutProps = {
 const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
 
 const Layout = ({ children }: LayoutProps) => {
+  // const isMobile = checkIsMobile();
+
   useGSAP(() => {
     ScrollSmoother.create({
       smooth: 1,
