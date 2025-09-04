@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React from 'react';
-
+import { checkIsMobile } from '@/lib/utils';
 import CustomCursor from './custom-cursor';
 import SnowBackground from './snow-background';
 
@@ -16,6 +16,8 @@ type LayoutProps = {
 const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
 
 const Layout = ({ children }: LayoutProps) => {
+  const isMobile = checkIsMobile();
+
   useGSAP(() => {
     ScrollSmoother.create({
       smooth: 1,
@@ -42,8 +44,8 @@ const Layout = ({ children }: LayoutProps) => {
       <div id="smooth-wrapper">
         <div id="smooth-content">{children}</div>
       </div>
-      {!isDevMode && <CustomCursor />}
-      <SnowBackground />
+      {!(isDevMode || isMobile) && <CustomCursor />}
+      {!isMobile && <SnowBackground />}
     </>
   );
 };
