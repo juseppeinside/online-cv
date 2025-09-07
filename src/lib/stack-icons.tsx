@@ -27,7 +27,7 @@ export const stackIcons = {
   JavaScript: JavaScriptIcon,
   TypeScript: TypeScriptIcon,
   React: ReactIcon,
-  'Next.Js': NextJsIcon,
+  'next.js': NextJsIcon,
   MobX: MobXIcon,
   tailwindcss: TailwindCSSIcon,
   Redux: ReduxIcon,

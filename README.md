@@ -23,7 +23,7 @@ EN / [RU](README.ru.md)
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd portfolio
+cd online-cv
 ```
 
 2. Install dependencies:
@@ -64,7 +64,7 @@ npm run dev
 - [x] Smooth scroll between sections
 - [x] Microanimations for interactive elements
 
-### 📄 Portfolio Sections
+### 📄 CV Sections
 - [x] FirstScreen - main screen with introduction
 - [x] AboutMe - developer information
 - [x] MyStack - technology stack
