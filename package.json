@@ -1,7 +1,7 @@
 {
   "name": "online-cv",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.2",
   "type": "module",
   "description": "Modern interactive CV built with React, TypeScript, GSAP, and Tailwind CSS",
   "author": {

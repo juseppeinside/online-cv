@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn, isDevMode } from '@/lib/utils';
 
 const Button = ({
   className,
@@ -8,8 +8,6 @@ const Button = ({
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >) => {
-  const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
-
   return (
     <button
       className={cn(

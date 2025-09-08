@@ -8,31 +8,31 @@
     "experience": [
       {
         "id": 1,
-        "company": "Saint Petersburg Peter the Great Polytechnic University (SPbPU)",
-        "position": "intern",
-        "startDate": "2019-02-01",
-        "endDate": "2019-04-01"
+        "company": "Sintez-AT",
+        "position": "developer",
+        "startDate": "2021-11-01",
+        "endDate": null
       },
       {
         "id": 2,
-        "company": "Sreda Solutions",
-        "position": "junior",
-        "startDate": "2019-08-01",
-        "endDate": "2020-08-01"
-      },
-      {
-        "id": 3,
         "company": "Simble",
         "position": "middle",
         "startDate": "2020-09-01",
         "endDate": "2021-10-01"
       },
       {
+        "id": 3,
+        "company": "Sreda Solutions",
+        "position": "junior",
+        "startDate": "2019-08-01",
+        "endDate": "2020-08-01"
+      },
+      {
         "id": 4,
-        "company": "Sintez-AT",
-        "position": "developer",
-        "startDate": "2021-11-01",
-        "endDate": null
+        "company": "Saint Petersburg Peter the Great Polytechnic University (SPbPU)",
+        "position": "intern",
+        "startDate": "2019-02-01",
+        "endDate": "2019-04-01"
       }
     ]
   },
@@ -44,7 +44,7 @@
           "JavaScript",
           "TypeScript",
           "React",
-          "Next.Js",
+          "next.js",
           "MobX",
           "Redux",
           "tailwindcss",

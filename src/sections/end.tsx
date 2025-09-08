@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import HeartIcon from '@/assets/icons/heart-ico.svg?react';
 import StarIcon from '@/assets/icons/star-ico.svg?react';
 import logger from '@/lib/logger';
+import { cn, isDevMode } from '@/lib/utils';
 
 //TODO: Вынести в отдельный API
 const repoPromise = fetch(
@@ -76,7 +77,7 @@ const End = () => {
   );
 
   return (
-    <div
+    <footer
       className="flex h-72 w-full flex-col items-center justify-center gap-4"
       ref={wrapperRef}
     >
@@ -87,7 +88,14 @@ const End = () => {
         </span>
         {i18n.t('end.after')}
       </p>
-      <a href="https://github.com/juseppeinside/online-cv">
+      <a
+        className={cn(
+          'cursor-none hover:text-primary/80',
+          isDevMode && 'cursor-pointer'
+        )}
+        href={import.meta.env.VITE_URL_GITHUB_CV_LINK}
+        target="_blank"
+      >
         {i18n.t('end.text')}
       </a>
       {repo && (
@@ -96,7 +104,7 @@ const End = () => {
           <p>{repo.stargazers_count}</p>
         </div>
       )}
-    </div>
+    </footer>
   );
 };
 

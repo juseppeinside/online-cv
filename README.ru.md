@@ -24,7 +24,7 @@
 1. Клонируйте репозиторий:
 ```bash
 git clone <repository-url>
-cd portfolio
+cd online-cv
 ```
 
 2. Установите зависимости:

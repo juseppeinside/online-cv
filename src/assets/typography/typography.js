@@ -7,7 +7,7 @@ module.exports = plugin(({ addComponents }) => {
       'font-weight': '800',
       'font-size': '60px',
       'letter-spacing': '0px',
-      'line-height': '90px',
+      'line-height': '70px',
     },
     '.h2': {
       'font-family': 'Roboto Flex',

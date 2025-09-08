@@ -4,12 +4,65 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="preload" as="image" href="/images/bg.webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="/images/front.webp" fetchpriority="high" />
+    <title>CV Shkividorov Maxim</title>
+ 
+    <style>
+      #preloader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        z-index: 9999;
+        overflow: hidden;
+      }
+      #sponge-container {
+        position: relative;
+        width: 100dvw;
+        height: 100dvh;
+        opacity: 70%;
+      }
+      #sponge-image {
+        width: 100dvw;
+        height: 100dvh;
+        object-fit: cover;
+        animation: spongeScale 2s ease-in-out infinite;
+      }
+      @keyframes spongeScale {
+        0%, 100% {
+          transform: scale(2) rotate(-50deg);
+        }
+        50% {
+          transform: scale(3) rotate(50deg);
+        }
+      }
+      #squares-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100dvw;
+        height:  100dvh;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        gap: 0;
+      }
+      .square {
+        background: #000;
+        opacity: 0;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <div id="preloader">
+      <div id="sponge-container">
+        <img id="sponge-image" src="/images/sponge.webp" alt="Loading..." />
+        <div id="squares-grid"></div>
+      </div>
+    </div>
   </body>
 </html>

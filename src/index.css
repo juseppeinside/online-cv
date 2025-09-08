@@ -9,10 +9,11 @@
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-background: var(--color-background);
+  --color-background-primary: var(--color-background-primary);
 }
 
 .theme-button {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: 24px;
@@ -38,6 +39,7 @@
   --color-primary: #c4c4c4;
   --color-secondary: #303030;
   --color-background: #303030;
+  --color-background-primary: #c4c4c4;
 }
 
 .dark {
@@ -48,6 +50,7 @@
   --color-primary: #303030;
   --color-secondary: #c4c4c4;
   --color-background: #c4c4c4;
+  --color-background-primary: #303030;
 }
 
 :root {
