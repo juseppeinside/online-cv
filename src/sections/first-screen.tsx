@@ -31,6 +31,8 @@ const FirstScreen = () => {
     localStorage.setItem('theme', newThemeValue);
   };
 
+  const nextLanguage = i18n.language === 'en' ? 'ru' : 'en';
+
   const toggleLanguage = () => {
     const currentLang = i18n.language || i18n.languages?.[0] || 'en';
     const newValue = currentLang.startsWith('ru') ? 'en' : 'ru';
@@ -141,7 +143,7 @@ const FirstScreen = () => {
           className="h-8 w-8 rounded-full bg-background-primary p-0 text-md text-secondary uppercase"
           onClick={toggleLanguage}
         >
-          {i18n.t('language')}
+          {nextLanguage}
         </Button>
         <div className="h-8 w-8 rounded-full bg-background-primary text-secondary">
           <Button
