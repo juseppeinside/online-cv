@@ -18,9 +18,7 @@ root.render(
   </StrictMode>
 );
 
-const SQUARES_DELAY = 1000;
-
 requestAnimationFrame(() => {
   createSquares();
-  setTimeout(removePreloader, SQUARES_DELAY);
+  removePreloader();
 });
