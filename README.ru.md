@@ -6,7 +6,7 @@
 
 <img width="100%" height="871" alt="изображение" src="https://github.com/user-attachments/assets/ee3344eb-0afe-4931-9102-690438adae18" />
 
-[Демонстрация](https://online-cv-eta.vercel.app/)
+[Демонстрация](https://online-cv-eta.vercel.app?utm_source=github)
 
 
 ## 🛠 Технологии
