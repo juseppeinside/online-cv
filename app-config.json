@@ -96,12 +96,11 @@
       },
       {
         "code": "+79992105952",
-        "url": "+79992105952",
         "name": "phone"
       },
       {
         "code": "maksimshkiv@mail.ru",
-        "url": "maksimshkiv@mail.ru",
+        "url": "mailto:maksimshkiv@mail.ru",
         "name": "email"
       }
     ]
