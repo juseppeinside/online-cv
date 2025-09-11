@@ -25,8 +25,8 @@ const MyStack = ({ blocks }: MyStackProps) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 80%',
-          end: 'bottom 80%',
+          start: 'top 100%',
+          end: 'bottom 90%',
           scrub: 0.5,
         },
       });
@@ -62,18 +62,23 @@ const MyStack = ({ blocks }: MyStackProps) => {
   const stack = blocks.map(({ title, items }) => (
     <div className="grid gap-10 sm:grid-cols-2" id="slide-up" key={title}>
       <h3 className="h2 uppercase">{i18n.t(`stack.${title}`)}</h3>
-      <div className="flex flex-wrap gap-11">
+      <ul
+        aria-label={`Технологии в категории ${i18n.t(`stack.${title}`)}`}
+        className="flex flex-wrap gap-11"
+      >
         {items.map((i) => {
           const IconComponent = stackIcons[i as keyof typeof stackIcons];
 
           return (
-            <div className="flex items-center gap-3" id="slide-up" key={i}>
-              {IconComponent && <IconComponent className="h-10 w-10" />}
+            <li className="flex items-center gap-3" id="slide-up" key={i}>
+              {IconComponent && (
+                <IconComponent aria-hidden="true" className="h-10 w-10" />
+              )}
               <p className="font-medium text-4xl">{i}</p>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   ));
 

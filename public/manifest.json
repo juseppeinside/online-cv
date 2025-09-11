@@ -1,0 +1,21 @@
+{
+  "name": "CV Shkividorov",
+  "short_name": "CV Shkividorov",
+  "description": "Опытный Frontend-разработчик из Санкт-Петербурга с 6+ летним опытом",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/helm.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "cv", "developer"],
+  "lang": "ru",
+  "dir": "ltr"
+}

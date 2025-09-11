@@ -5,7 +5,7 @@ import './lib/i18n.ts';
 
 import App from './app.tsx';
 import Layout from './components/layout.tsx';
-import { createSquares, removePreloader } from './components/preloader.tsx';
+import { removePreloader } from './components/preloader.tsx';
 
 // biome-ignore lint/style/noNonNullAssertion: <react rules>
 const root = createRoot(document.getElementById('root')!);
@@ -18,9 +18,10 @@ root.render(
   </StrictMode>
 );
 
-const SQUARES_DELAY = 1000;
+const ANIMATION_DURATION = 100;
 
 requestAnimationFrame(() => {
-  createSquares();
-  setTimeout(removePreloader, SQUARES_DELAY);
+  setTimeout(() => {
+    removePreloader();
+  }, ANIMATION_DURATION);
 });

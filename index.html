@@ -1,68 +1,197 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV Shkividorov Maxim</title>
- 
-    <style>
-      #preloader {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #000;
-        z-index: 9999;
-        overflow: hidden;
-      }
-      #sponge-container {
-        position: relative;
-        width: 100dvw;
-        height: 100dvh;
-        opacity: 70%;
-      }
-      #sponge-image {
-        width: 100dvw;
-        height: 100dvh;
-        object-fit: cover;
-        animation: spongeScale 2s ease-in-out infinite;
-      }
-      @keyframes spongeScale {
-        0%, 100% {
-          transform: scale(2) rotate(-50deg);
-        }
-        50% {
-          transform: scale(3) rotate(50deg);
-        }
-      }
-      #squares-grid {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100dvw;
-        height:  100dvh;
-        display: grid;
-        grid-template-columns: repeat(10, 1fr);
-        grid-template-rows: repeat(10, 1fr);
-        gap: 0;
-      }
-      .square {
-        background: #000;
-        opacity: 0;
-      }
-    </style>
+    
+    <!-- Primary Meta Tags -->
+    <title>Frontend Разработчик | CV</title>
+    <meta name="title" content="Frontend Разработчик | CV" />
+    <meta name="description" content="Опытный Frontend-разработчик из Санкт-Петербурга с 6+ летним опытом. Специализируюсь на React, TypeScript, GSAP. Создаю современные веб-решения для развития бизнеса." />
+    <meta name="keywords" content="frontend разработчик, react, typescript, javascript, веб-разработка, портфолио, резюме" />
+    <meta name="author" content="Шкивидоров Максим" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Russian" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shkividorov.com/" />
+    <meta property="og:title" content="Frontend Разработчик | CV" />
+    <meta property="og:description" content="Опытный Frontend-разработчик из Санкт-Петербурга с 6+ летним опытом. Специализируюсь на React, TypeScript, GSAP." />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:site_name" content="CV Shkividorov Maxim" />
+    <meta property="og:locale" content="ru_RU" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://shkividorov.com/" />
+    <meta property="twitter:title" content="Frontend Разработчик | CV" />
+    <meta property="twitter:description" content="Опытный Frontend-разработчик из Санкт-Петербурга с 6+ летним опытом. Специализируюсь на React, TypeScript, GSAP." />
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="CV Shkividorov" />
+    <meta name="apple-mobile-web-app-title" content="CV Shkividorov" />
+    <meta name="msapplication-tooltip" content="CV Shkividorov" />
+    <meta name="msapplication-starturl" content="/" />
+    <meta name="geo.region" content="RU-SPE" />
+    <meta name="geo.placename" content="Санкт-Петербург" />
+    <meta name="geo.position" content="59.9311;30.3609" />
+    <meta name="ICBM" content="59.9311, 30.3609" />
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/helm.svg" />
+    <link rel="apple-touch-icon" href="/helm.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preloads -->
+    <link rel="preload" href="/src/assets/typography/Roboto-VariableFont_wdth,wght.ttf" as="font" type="font/ttf" crossorigin fetchpriority="high">
+    <link rel="preload" href="/images/front_min.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="/images/bg_min.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="/src/main.tsx" as="script" fetchpriority="high">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//api.github.com">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://shkividorov.com/" />
   </head>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Шкивидоров Максим",
+    "jobTitle": "Frontend Разработчик",
+    "description": "Опытный Frontend-разработчик из Санкт-Петербурга с 6+ летним опытом. Специализируюсь на React, TypeScript, GSAP.",
+    "url": "https://shkividorov.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Санкт-Петербург",
+      "addressCountry": "RU"
+    },
+    "knowsAbout": [
+      "React",
+      "TypeScript", 
+      "JavaScript",
+      "GSAP",
+      "Tailwind CSS",
+      "Vite",
+      "Frontend Development",
+      "Web Development"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Frontend Разработчик",
+      "description": "Создание современных веб-приложений с использованием React, TypeScript и других современных технологий"
+    },
+    "sameAs": [
+      "https://github.com/juseppeinside"
+    ]
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3SRNGM2ZL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-L3SRNGM2ZL');
+  </script>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
     <div id="preloader">
-      <div id="sponge-container">
-        <img id="sponge-image" src="/images/sponge.webp" alt="Loading..." />
-        <div id="squares-grid"></div>
-      </div>
+
+      <div id="loading-indicator"></div> 
+      
+      <img id="bg-image"  src="/images/bg_min.png" alt="Portfolio background" />
+      <img id="front-image"  src="/images/front_min.png" alt="Portfolio portrait" />
+
     </div>
+
+    <style>
+      #loading-indicator {
+        position: absolute;
+        z-index: 99999;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid #ffffff;
+        border-radius: 50%;
+        animation: spinner 1s linear infinite;
+      }
+
+      #preloader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      #bg-image {
+      position: absolute;
+      filter: blur(5px);
+      animation: zoomIn 2s;
+      rotate: 180deg;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      }
+
+      #front-image {
+      filter: blur(5px);
+      animation: zoomIn 2s;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(1.1);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes spinner {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+    </style>
   </body>
 </html>

@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { cn } from '@/lib/utils';
 
 type SectionWrapperProps = {
@@ -16,8 +16,6 @@ const SectionWrapper = ({
   className,
   ...other
 }: SectionWrapperProps) => {
-  const wrapperRef = React.useRef<HTMLDivElement | null>(null);
-
   return (
     <section
       className={cn(
@@ -27,7 +25,7 @@ const SectionWrapper = ({
       {...other}
     >
       {Icon && (
-        <div className="flex items-center gap-2" id="slide-up" ref={wrapperRef}>
+        <div className="flex items-center gap-2" id="slide-up">
           <Icon />
           <h2 className="h2 font-semibold text-xl uppercase">{title}</h2>
         </div>

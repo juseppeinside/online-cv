@@ -6,7 +6,7 @@ EN / [RU](README.ru.md)
 
 <img width="100%" height="871" alt="изображение" src="https://github.com/user-attachments/assets/0959a0e9-a04c-421a-ad39-7dd9ee23b0e5" />
 
-[Demo](https://online-cv-eta.vercel.app/)
+[Demo](https://online-cv-eta.vercel.app?utm_source=github) / [Design in Figma](https://www.figma.com/design/94hp9BEkB7Vb0A41hRRqiY/CV_Resume_Draft?node-id=102-1175&p=f&t=I7X8sa4z4egPwpOk-0)
 
 ## 🛠 Technologies
 
