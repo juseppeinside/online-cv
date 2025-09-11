@@ -56,7 +56,7 @@ const AboutMe = ({ years, hours, projectCount }: AboutMeProps) => {
 
   return (
     <SectionWrapper id="about-me" ref={containerRef}>
-      <div className="flex flex-col gap-10 md:flex-row">
+      <article className="flex flex-col gap-10 md:flex-row">
         <div className="flex flex-col items-start gap-5">
           <h2 className="h1 whitespace-break-spaces" id="slide-up">
             {i18n.t('about.title')}
@@ -71,7 +71,10 @@ const AboutMe = ({ years, hours, projectCount }: AboutMeProps) => {
           </div>
         </div>
 
-        <div className="mt-5 flex w-full flex-row items-center justify-center gap-12 md:mt-28 md:flex-col md:items-end">
+        <aside
+          aria-label="Статистика опыта работы"
+          className="mt-5 flex w-full flex-row items-center justify-center gap-12 md:mt-28 md:flex-col md:items-end"
+        >
           <div id="slide-up">
             <p className={numberClass}>{years}+</p>
             <p className={textClass}>{i18n.t('about.years')}</p>
@@ -84,8 +87,8 @@ const AboutMe = ({ years, hours, projectCount }: AboutMeProps) => {
             <p className={numberClass}>{hours}K+</p>
             <p className={textClass}>{i18n.t('about.hours')}</p>
           </div>
-        </div>
-      </div>
+        </aside>
+      </article>
     </SectionWrapper>
   );
 };

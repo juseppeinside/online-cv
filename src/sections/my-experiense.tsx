@@ -70,11 +70,16 @@ const MyExperience = ({ experience }: MyExperienceProps) => {
       : i18n.t('present');
 
     return (
-      <div className="flex flex-col gap-1" id="slide-up" key={item.id}>
+      <article className="flex flex-col gap-1" id="slide-up" key={item.id}>
         <h3 className="h3">{item.company}</h3>
         <h2 className="h2">{i18n.t(`experience.${item.position}`)}</h2>
-        <p className="paragraph-sm">{`${startDate} - ${endDate}`}</p>
-      </div>
+        <time
+          className="paragraph-sm"
+          dateTime={`${item.startDate}/${item.endDate || 'present'}`}
+        >
+          {`${startDate} - ${endDate}`}
+        </time>
+      </article>
     );
   });
 

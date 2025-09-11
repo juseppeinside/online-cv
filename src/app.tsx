@@ -30,13 +30,13 @@ const App = () => {
   return (
     <div className="relative text-primary">
       <FirstScreen />
-      <div className="sticky h-full w-full rounded-t-[40px] bg-background px-5">
+      <main className="sticky h-full w-full rounded-t-[40px] bg-background px-5">
         <AboutMe {...data.aboutMe} />
         <MyStack {...data.myStack} />
         <MyExperience {...data.myExperience} />
         <MyContacts {...data.myContacts} />
         <End />
-      </div>
+      </main>
     </div>
   );
 };

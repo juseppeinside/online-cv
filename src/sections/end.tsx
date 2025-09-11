@@ -84,23 +84,28 @@ const End = () => {
       <p className="inline-block text-center">
         {i18n.t('end.before')}
         <span className="inline-block px-1" ref={svgRef}>
-          <HeartIcon className="inline-block h-4 w-4 align-middle text-red-500" />
+          <HeartIcon
+            aria-hidden="true"
+            className="inline-block h-4 w-4 align-middle text-red-500"
+          />
         </span>
         {i18n.t('end.after')}
       </p>
       <a
+        aria-label="Посмотреть исходный код резюме на GitHub"
         className={cn(
           'cursor-none hover:text-primary/80',
           isDevMode && 'cursor-pointer'
         )}
         href={import.meta.env.VITE_URL_GITHUB_CV_LINK}
+        rel="noopener noreferrer"
         target="_blank"
       >
         {i18n.t('end.text')}
       </a>
       {repo && (
         <div className="flex items-center gap-1">
-          <StarIcon className="h-4 w-4" />
+          <StarIcon aria-hidden="true" className="h-4 w-4" />
           <p>{repo.stargazers_count}</p>
         </div>
       )}
