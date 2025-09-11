@@ -74,23 +74,23 @@ npm run dev
 - [ ] Blog - blog/articles
 
 ### 🔧 Functionality
-- [ ] Responsive design for all devices
+- [x] Responsive design for all devices
 - [x] Logging with Pino
 - [x] Class utilities (clsx, tailwind-merge)
 - [x] Dark/light theme
 - [x] Multilanguage support (i18n)
-- [ ] SEO optimization
-- [ ] Open Graph meta tags
-- [ ] Sitemap generation
+- [x] SEO optimization
+- [x] Open Graph meta tags
+- [x] Sitemap generation
 
 ### 🎯 Performance
 - [ ] Lazy loading for images
 - [ ] Code splitting for components
 - [ ] Bundle size optimization
 - [ ] Service Worker for caching
-- [ ] WebP/AVIF image support
+- [x] WebP/AVIF image support
 - [ ] Critical CSS inline
-- [ ] Preload key resources
+- [x] Preload key resources
 
 ### 🧪 Testing
 - [ ] Unit tests for components
