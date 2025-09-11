@@ -6,54 +6,6 @@
     <link rel="preload" href="/src/assets/typography/Roboto-VariableFont_wdth,wght.ttf" as="font" type="font/ttf" crossorigin fetchpriority="high">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV Shkividorov Maxim</title>
- 
-    <style>
-      #preloader {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #000;
-        z-index: 9999;
-        overflow: hidden;
-      }
-      #sponge-container {
-        position: relative;
-        width: 100dvw;
-        height: 100dvh;
-        opacity: 70%;
-      }
-      #sponge-image {
-        width: 100dvw;
-        height: 100dvh;
-        object-fit: cover;
-        animation: spongeScale 2s ease-in-out infinite;
-      }
-      @keyframes spongeScale {
-        0%, 100% {
-          transform: scale(2) rotate(-50deg);
-        }
-        50% {
-          transform: scale(3) rotate(50deg);
-        }
-      }
-      #squares-grid {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100dvw;
-        height:  100dvh;
-        display: grid;
-        grid-template-columns: repeat(10, 1fr);
-        grid-template-rows: repeat(10, 1fr);
-        gap: 0;
-      }
-      .square {
-        background: #000;
-        opacity: 0;
-      }
-    </style>
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -71,10 +23,89 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <div id="preloader">
-      <div id="sponge-container">
-        <img id="sponge-image" src="/images/sponge.webp" alt="Loading..." />
-        <div id="squares-grid"></div>
-      </div>
+
+      <div id="loading-indicator"></div> 
+      
+      <img id="bg-image"  src="/images/bg_min.png" alt="" />
+      <img id="front-image"  src="/images/front_min.png" alt="" />
+
     </div>
+  
+
+    <style>
+ 
+
+      #loading-indicator {
+        position: absolute;
+        z-index: 99999;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid #ffffff;
+        border-radius: 50%;
+        animation: spinner 1s linear infinite;
+      }
+
+      #preloader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      #bg-image {
+      position: absolute;
+      filter: blur(5px);
+      animation: zoomIn 2s;
+      rotate: 180deg;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      }
+
+      #front-image {
+      filter: blur(5px);
+      animation: zoomIn 2s;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(1.1);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes spinner {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+    </style>
   </body>
 </html>

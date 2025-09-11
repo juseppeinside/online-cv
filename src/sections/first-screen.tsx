@@ -116,7 +116,7 @@ const FirstScreen = () => {
         </Button>
       </div>
       <img
-        alt="front-image-argonaut"
+        alt=""
         className="absolute z-20 h-full w-full object-cover object-top"
         decoding="async"
         height="1080"
@@ -126,7 +126,7 @@ const FirstScreen = () => {
         width="1920"
       />
       <img
-        alt="background-clouds"
+        alt=""
         className="absolute z-10 h-full w-full rotate-180 object-cover object-top"
         decoding="async"
         height="1080"
