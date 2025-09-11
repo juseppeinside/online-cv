@@ -9,6 +9,8 @@ import { checkIsMobile } from '@/lib/utils';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+const MOBILE_TITLE_OFFSET = -230;
+const DESKTOP_TITLE_OFFSET = -320;
 const MOBILE_SCALE = 1.0;
 const DESKTOP_BG_SCALE = 1.2;
 const DESKTOP_FRONT_SCALE = 1.1;
@@ -76,7 +78,7 @@ const FirstScreen = () => {
           '#title',
           {
             ease: 'power2.out',
-            y: -300,
+            y: isMobile ? MOBILE_TITLE_OFFSET : DESKTOP_TITLE_OFFSET,
           },
           'start'
         )

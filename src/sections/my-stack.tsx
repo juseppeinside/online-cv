@@ -25,8 +25,8 @@ const MyStack = ({ blocks }: MyStackProps) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 80%',
-          end: 'bottom 80%',
+          start: 'top 100%',
+          end: 'bottom bottom',
           scrub: 0.5,
         },
       });

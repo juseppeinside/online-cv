@@ -24,7 +24,7 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top 80%',
-          end: 'bottom 80%',
+          end: 'bottom 100%',
           scrub: 0.5,
         },
       });

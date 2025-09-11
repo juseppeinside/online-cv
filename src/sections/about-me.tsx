@@ -20,8 +20,8 @@ const AboutMe = ({ years, hours, projectCount }: AboutMeProps) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 70%',
-          end: 'bottom bottom',
+          start: 'top 80%',
+          end: 'bottom 100%',
           scrub: 1,
         },
       });

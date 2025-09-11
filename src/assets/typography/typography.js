@@ -8,6 +8,10 @@ module.exports = plugin(({ addComponents }) => {
       'font-size': '60px',
       'letter-spacing': '0px',
       'line-height': '70px',
+      '@media (max-width: 768px)': {
+        'font-size': '42px',
+        'line-height': '42px',
+      },
     },
     '.h2': {
       'font-family': 'Roboto',
