@@ -59,29 +59,26 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
 
     return (
       <div
-        className="grid grid-cols-1 items-center gap-6 text-start after:col-span-full after:block after:h-0.5 after:w-full after:bg-primary after:content-[''] last:after:hidden hover:text-blue-400 sm:grid-cols-[repeat(3,1fr)]"
+        className="grid grid-cols-1 items-center gap-6 text-start after:col-span-full after:block after:h-0.5 after:w-full after:bg-primary after:content-[''] last:after:hidden hover:text-blue-400 sm:grid-cols-[repeat(2,1fr)]"
         id="slide-up"
         key={contact.code}
       >
         <h2 className="h2 uppercase">{i18n.t(`contacts.${contact.name}`)}</h2>
-        {contact.url ? (
-          <a
-            aria-label={`Связаться через ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
-            className="w-fit text-2xl"
-            href={contact.url}
-            rel="noopener noreferrer nofollow"
-            target="_blank"
-          >
-            {value}
-          </a>
-        ) : (
-          <span className="w-fit text-2xl">{value}</span>
-        )}
-        <CopyButton
-          ariaLabel={`${i18n.t('copy.button')} ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
-          className="text-inherit"
-          value={contact.url || value}
-        />
+        <div className="flex items-center justify-between">
+          {contact.url ? (
+            <a
+              aria-label={`Связаться через ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
+              className="text-2xl"
+              href={contact.url}
+              target="_blank"
+            >
+              {value}
+            </a>
+          ) : (
+            <span className="text-2xl">{value}</span>
+          )}
+          <CopyButton className="text-inherit" value={contact.url || value} />
+        </div>
       </div>
     );
   });
