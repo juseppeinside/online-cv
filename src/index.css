@@ -44,16 +44,32 @@
   }
 }
 
-::selection {
-  background-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
-  color: var(--color-secondary);
-  text-shadow: none;
+@supports selector(::selection) {
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+    color: var(--color-secondary);
+    text-shadow: none;
+  }
 }
 
-::-moz-selection {
-  background-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
-  color: var(--color-secondary);
-  text-shadow: none;
+@supports selector(::-moz-selection) {
+  ::-moz-selection {
+    background-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+    color: var(--color-secondary);
+    text-shadow: none;
+  }
+}
+
+@supports (scrollbar-width: auto) {
+  html {
+    scrollbar-width: none;
+  }
+}
+
+@supports selector(::-webkit-scrollbar) {
+  html::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .light {
@@ -84,9 +100,7 @@
   font-family: "Roboto", sans-serif, system-ui;
 }
 * {
-  transition:
-    color 0.3s ease,
-    background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 :root:not([data-dev-mode="true"]) {

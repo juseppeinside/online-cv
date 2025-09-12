@@ -55,19 +55,19 @@ const CopyButton = ({ value, className, ...other }: CopyButtonProps) => {
 
   return (
     <Button
-      className={cn('relative w-fit bg-transparent text-inherit', className)}
+      className={cn('relative size-6 bg-transparent text-inherit', className)}
       disableHover
       onClick={handleCopy}
       {...other}
     >
       <CheckCopyIcon
         aria-hidden
-        className="absolute top-0 left-1/2 h-8 w-8 text-green-400 opacity-0"
+        className="absolute top-0 left-1/2 size-6 translate-x-[-50%] text-green-400 opacity-0"
         id={checkId}
       />
       <CopyIcon
         aria-hidden
-        className="absolute top-0 left-1/2 h-8 w-8"
+        className="absolute top-0 left-1/2 size-6 translate-x-[-50%]"
         id={copyId}
       />
     </Button>
