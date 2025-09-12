@@ -71,12 +71,12 @@ const CopyButton = ({
     >
       <CheckCopyIcon
         aria-hidden
-        className="absolute top-0 left-1/2 size-6 text-green-400 opacity-0"
+        className="absolute top-0 left-1/2 h-8 w-8 text-green-400 opacity-0"
         id={checkId}
       />
       <CopyIcon
         aria-hidden
-        className="absolute top-0 left-1/2 size-6"
+        className="absolute top-0 left-1/2 h-8 w-8"
         id={copyId}
       />
     </Button>
