@@ -86,7 +86,7 @@ const End = () => {
           isDevMode && 'cursor-pointer'
         )}
         href={import.meta.env.VITE_URL_GITHUB_CV_LINK}
-        rel="noopener noreferrer"
+        rel="noopener noreferrer nofollow"
         target="_blank"
       >
         {i18n.t('end.text')}
