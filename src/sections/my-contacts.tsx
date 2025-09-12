@@ -53,25 +53,26 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
     { scope: containerRef }
   );
 
-  const handleContactClick = (url: string) => {
-    url && window.open(url, '_blank');
-  };
-
-  const contactsList = contacts.map((contact) => (
-    <button
-      aria-label={`Связаться через ${i18n.t(`contacts.${contact.name}`)}: ${formatContactCode(contact.name, contact.code)}`}
-      className="grid cursor-pointer grid-cols-1 items-center gap-6 text-start after:col-span-full after:block after:h-0.5 after:w-full after:bg-primary after:content-[''] last:after:hidden hover:text-blue-400 sm:grid-cols-[repeat(2,minmax(0,1fr))]"
-      id="slide-up"
-      key={contact.code}
-      onClick={() => handleContactClick(contact?.url || '')}
-      type="button"
-    >
-      <h2 className="h2 uppercase">{i18n.t(`contacts.${contact.name}`)}</h2>
-      <p className="text-2xl">
-        {formatContactCode(contact.name, contact.code)}
-      </p>
-    </button>
-  ));
+  const contactsList = contacts.map((contact) => {
+    const value = formatContactCode(contact.name, contact.code);
+    return (
+      <div
+        className="grid grid-cols-1 items-center gap-6 text-start after:col-span-full after:block after:h-0.5 after:w-full after:bg-primary after:content-[''] last:after:hidden hover:text-blue-400 sm:grid-cols-[repeat(2,minmax(0,1fr))]"
+        id="slide-up"
+        key={contact.code}
+      >
+        <h2 className="h2 uppercase">{i18n.t(`contacts.${contact.name}`)}</h2>
+        <a
+          aria-label={`Связаться через ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
+          className="w-fit text-2xl"
+          href={contact.url}
+          target="_blank"
+        >
+          {value}
+        </a>
+      </div>
+    );
+  });
 
   return (
     <SectionWrapper

@@ -27,7 +27,9 @@ const SectionWrapper = ({
       {Icon && (
         <div className="flex items-center gap-2" id="slide-up">
           <Icon />
-          <h2 className="h2 font-semibold text-xl uppercase">{title}</h2>
+          <h2 className="h2 select-none font-semibold text-xl uppercase">
+            {title}
+          </h2>
         </div>
       )}
       {children}
