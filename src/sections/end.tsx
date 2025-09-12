@@ -48,11 +48,6 @@ const End = () => {
         repeat: -1,
         yoyo: true,
         ease: 'bounce',
-        stagger: {
-          each: 1,
-          repeat: -1,
-          yoyo: true,
-        },
         scale: 0.9,
         scrub: true,
       });

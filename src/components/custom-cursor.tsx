@@ -4,8 +4,6 @@ import React from 'react';
 import IconCursor from '@/assets/icons/cursor-ico.svg?react';
 import { checkIsMobile } from '@/lib/utils';
 
-gsap.registerPlugin(useGSAP);
-
 const CURSOR_X_OFFSET = 11;
 const CURSOR_Y_OFFSET = 11;
 

@@ -19,7 +19,7 @@ const SectionWrapper = ({
   return (
     <section
       className={cn(
-        'mx-auto flex w-full max-w-[1200px] flex-col justify-between gap-10 py-10 md:py-24',
+        'mx-auto flex w-full max-w-[1200px] flex-col justify-between gap-10 px-3 py-10 md:px-8 md:py-24',
         className
       )}
       {...other}

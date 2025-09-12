@@ -105,7 +105,10 @@ const FirstScreen = () => {
   );
 
   const onClick = () => {
-    gsap.to(window, { duration: 1, scrollTo: '#about-me' });
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: '#about-me', offsetY: 150 },
+    });
   };
 
   return (

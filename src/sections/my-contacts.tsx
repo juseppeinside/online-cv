@@ -6,6 +6,7 @@ import ContactIcon from '@/assets/icons/contact-ico.svg?react';
 import CopyButton from '@/components/copy-button';
 import SectionWrapper from '@/components/section-wrapper';
 import { formatContactCode } from '@/lib/contact-adapter';
+import { checkIsMobile } from '@/lib/utils';
 
 export type MyContactsProps = {
   contacts: {
@@ -18,6 +19,7 @@ export type MyContactsProps = {
 const MyContacts = ({ contacts }: MyContactsProps) => {
   const { i18n } = useTranslation();
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const isMobile = checkIsMobile();
 
   useGSAP(
     () => {
@@ -73,7 +75,9 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
           >
             {value}
           </a>
-          <CopyButton className="text-inherit" value={contact.url || value} />
+          {isMobile ? null : (
+            <CopyButton className="text-inherit" value={contact.url || value} />
+          )}
         </div>
       </div>
     );
