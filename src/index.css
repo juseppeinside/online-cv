@@ -100,7 +100,9 @@
   font-family: "Roboto", sans-serif, system-ui;
 }
 * {
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 :root:not([data-dev-mode="true"]) {
