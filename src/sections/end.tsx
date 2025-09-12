@@ -94,7 +94,7 @@ const End = () => {
       <a
         aria-label="Посмотреть исходный код резюме на GitHub"
         className={cn(
-          'cursor-none hover:text-primary/80',
+          'cursor-none underline hover:text-blue-400',
           isDevMode && 'cursor-pointer'
         )}
         href={import.meta.env.VITE_URL_GITHUB_CV_LINK}

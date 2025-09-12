@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import ContactIcon from '@/assets/icons/contact-ico.svg?react';
+import CopyButton from '@/components/copy-button';
 import SectionWrapper from '@/components/section-wrapper';
 import { formatContactCode } from '@/lib/contact-adapter';
 
@@ -55,9 +56,10 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
 
   const contactsList = contacts.map((contact) => {
     const value = formatContactCode(contact.name, contact.code);
+
     return (
       <div
-        className="grid grid-cols-1 items-center gap-6 text-start after:col-span-full after:block after:h-0.5 after:w-full after:bg-primary after:content-[''] last:after:hidden hover:text-blue-400 sm:grid-cols-[repeat(2,minmax(0,1fr))]"
+        className="grid grid-cols-1 items-center gap-6 text-start after:col-span-full after:block after:h-0.5 after:w-full after:bg-primary after:content-[''] last:after:hidden hover:text-blue-400 sm:grid-cols-[repeat(3,1fr)]"
         id="slide-up"
         key={contact.code}
       >
@@ -70,6 +72,7 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
         >
           {value}
         </a>
+        <CopyButton className="text-inherit" value={contact.url || value} />
       </div>
     );
   });
