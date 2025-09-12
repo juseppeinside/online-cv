@@ -4,26 +4,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import HeartIcon from '@/assets/icons/heart-ico.svg?react';
 import StarIcon from '@/assets/icons/star-ico.svg?react';
-import logger from '@/lib/logger';
+import { useGithubStars } from '@/hooks/use-github-stars';
 import { cn, isDevMode } from '@/lib/utils';
 
-//TODO: Вынести в отдельный API
-const repoPromise = fetch(
-  'https://api.github.com/repos/juseppeinside/online-cv'
-).then((res) => {
-  try {
-    if (!res.ok) {
-      throw new Error('Ошибка загрузки');
-    }
-    return res.json();
-  } catch (error) {
-    logger.error('Error fetching repo >>>', error);
-    return null;
-  }
-});
-
 const End = () => {
-  const repo = React.use(repoPromise);
+  const { data: stars, isFetching } = useGithubStars(
+    'juseppeinside',
+    'online-cv'
+  );
 
   const { i18n } = useTranslation();
 
@@ -103,10 +91,10 @@ const End = () => {
       >
         {i18n.t('end.text')}
       </a>
-      {repo && (
+      {stars && !isFetching && (
         <div className="flex items-center gap-1">
           <StarIcon aria-hidden="true" className="h-4 w-4" />
-          <p>{repo.stargazers_count}</p>
+          <p>{stars}</p>
         </div>
       )}
     </footer>
