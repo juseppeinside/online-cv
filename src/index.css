@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @import "./assets/typography/fonts.css";
-/* biome-ignore lint/suspicious/noUnknownAtRules: <typography recomendations> */
+/* biome-ignore lint/suspicious/noUnknownAtRules: <typography recommendations> */
 @plugin "./assets/typography/typography.js";
 
 /* biome-ignore lint/suspicious/noUnknownAtRules: <tailwind requirement> */
@@ -15,8 +15,33 @@
 .theme-button {
   background-color: var(--color-secondary);
   -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
+  -webkit-mask-position: top;
   -webkit-mask-size: 24px;
+}
+
+.button-hover-effect {
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.5s all ease;
+    box-sizing: border-box;
+  }
+  &:hover::before {
+    border-radius: inherit;
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    background: var(--color-blue-400);
+    opacity: 1;
+    z-index: -1;
+  }
 }
 
 ::selection {

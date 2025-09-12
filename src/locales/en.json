@@ -44,5 +44,9 @@
     "before": "make with",
     "after": "for dear HRs",
     "text": "this resume on github"
+  },
+  "tooltip": {
+    "language": "Language",
+    "theme": "Theme"
   }
 }

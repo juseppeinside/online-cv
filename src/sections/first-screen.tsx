@@ -5,6 +5,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslation } from 'react-i18next';
 import Button from '@/components/button';
+import Tooltip from '@/components/tooltip';
 import { checkIsMobile } from '@/lib/utils';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -142,20 +143,24 @@ const FirstScreen = () => {
         className="absolute top-10 right-10 z-30 flex items-center gap-3"
         id="tools"
       >
-        <Button
-          aria-label={`Toggle language to ${nextLanguage}`}
-          className="h-8 w-8 rounded-full bg-background-primary p-0 text-md text-secondary uppercase"
-          onClick={toggleLanguage}
-        >
-          {nextLanguage}
-        </Button>
-        <div className="h-8 w-8 rounded-full bg-background-primary text-secondary">
+        <Tooltip text={i18n.t('tooltip.language')}>
+          <Button
+            aria-label={`Toggle language to ${nextLanguage}`}
+            className="h-8 w-8 rounded-full p-0 text-md uppercase"
+            onClick={toggleLanguage}
+          >
+            {nextLanguage}
+          </Button>
+        </Tooltip>
+        <Tooltip text={i18n.t('tooltip.theme')}>
           <Button
             aria-label="Toggle theme"
-            className="theme-button flex h-8 w-8 px-0 text-secondary"
+            className="flex h-8 w-8 rounded-full px-0"
             onClick={toggleTheme}
-          />
-        </div>
+          >
+            <div className="theme-button h-8 w-8" />
+          </Button>
+        </Tooltip>
       </nav>
     </section>
   );
