@@ -48,5 +48,9 @@
   "tooltip": {
     "language": "Язык",
     "theme": "Тема"
+  },
+  "copy": {
+    "button": "Копировать",
+    "success": "Скопировано"
   }
 }

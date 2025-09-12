@@ -67,14 +67,18 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
       >
         <h2 className="h2 uppercase">{i18n.t(`contacts.${contact.name}`)}</h2>
         <div className="flex items-center justify-between">
-          <a
-            aria-label={`Связаться через ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
-            className="text-2xl"
-            href={contact.url}
-            target="_blank"
-          >
-            {value}
-          </a>
+          {contact.url ? (
+            <a
+              aria-label={`Связаться через ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
+              className="text-2xl"
+              href={contact.url}
+              target="_blank"
+            >
+              {value}
+            </a>
+          ) : (
+            <p className="text-2xl">{value}</p>
+          )}
           {isMobile ? null : (
             <CopyButton className="text-inherit" value={contact.url || value} />
           )}

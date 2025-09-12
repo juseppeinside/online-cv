@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import CheckCopyIcon from '@/assets/icons/check-copy-ico.svg?react';
 import CopyIcon from '@/assets/icons/copy-ico.svg?react';
 import Button, { type ButtonProps } from '@/components/button';
@@ -8,9 +9,16 @@ import { cn } from '@/lib/utils';
 
 type CopyButtonProps = {
   value: string;
+  ariaLabel?: string;
 } & ButtonProps;
 
-const CopyButton = ({ value, className, ...other }: CopyButtonProps) => {
+const CopyButton = ({
+  value,
+  ariaLabel,
+  className,
+  ...other
+}: CopyButtonProps) => {
+  const { i18n } = useTranslation();
   const copyId = `copy-${React.useId()}`;
   const checkId = `copy-button-${React.useId()}`;
   const [pressed, setPressed] = React.useState(false);
@@ -55,6 +63,7 @@ const CopyButton = ({ value, className, ...other }: CopyButtonProps) => {
 
   return (
     <Button
+      aria-label={ariaLabel || i18n.t('copy.button')}
       className={cn('relative size-6 bg-transparent text-inherit', className)}
       disableHover
       onClick={handleCopy}
