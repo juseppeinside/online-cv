@@ -5,9 +5,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React from 'react';
 import { checkIsMobile } from '@/lib/utils';
 import CustomCursor from './custom-cursor';
+import Scrollbar from './scrollbar';
 import SnowBackground from './snow-background';
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP);
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -44,6 +45,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div id="smooth-wrapper">
         <div id="smooth-content">{children}</div>
       </div>
+      {!isMobile && <Scrollbar />}
       {!(isDevMode || isMobile) && <CustomCursor />}
       {!isMobile && <SnowBackground />}
     </>
