@@ -64,16 +64,24 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
         key={contact.code}
       >
         <h2 className="h2 uppercase">{i18n.t(`contacts.${contact.name}`)}</h2>
-        <a
-          aria-label={`Связаться через ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
-          className="w-fit text-2xl"
-          href={contact.url}
-          rel="noopener noreferrer nofollow"
-          target="_blank"
-        >
-          {value}
-        </a>
-        <CopyButton className="text-inherit" value={contact.url || value} />
+        {contact.url ? (
+          <a
+            aria-label={`Связаться через ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
+            className="w-fit text-2xl"
+            href={contact.url}
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+          >
+            {value}
+          </a>
+        ) : (
+          <span className="w-fit text-2xl">{value}</span>
+        )}
+        <CopyButton
+          ariaLabel={`${i18n.t('copy.button')} ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
+          className="text-inherit"
+          value={contact.url || value}
+        />
       </div>
     );
   });

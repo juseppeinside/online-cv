@@ -48,5 +48,9 @@
   "tooltip": {
     "language": "Language",
     "theme": "Theme"
+  },
+  "copy": {
+    "button": "Copy",
+    "success": "Copied"
   }
 }
