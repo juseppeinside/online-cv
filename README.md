@@ -85,11 +85,11 @@ npm run dev
 
 ### 🎯 Performance
 - [ ] Lazy loading for images
-- [ ] Code splitting for components
-- [ ] Bundle size optimization
+- [x] Code splitting for components
+- [x] Bundle size optimization
 - [ ] Service Worker for caching
 - [x] WebP/AVIF image support
-- [ ] Critical CSS inline
+- [x] Critical CSS inline
 - [x] Preload key resources
 
 ### 🧪 Testing
