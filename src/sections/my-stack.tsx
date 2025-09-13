@@ -60,7 +60,7 @@ const MyStack = ({ blocks }: MyStackProps) => {
     { scope: containerRef }
   );
   const stack = blocks.map(({ title, items }) => (
-    <div className="grid gap-10 sm:grid-cols-2" id="slide-up" key={title}>
+    <div className="grid gap-10 md:grid-cols-2" id="slide-up" key={title}>
       <h3 className="h2 uppercase">{i18n.t(`stack.${title}`)}</h3>
       <ul
         aria-label={`Технологии в категории ${i18n.t(`stack.${title}`)}`}

@@ -6,20 +6,19 @@ import ContactIcon from '@/assets/icons/contact-ico.svg?react';
 import CopyButton from '@/components/copy-button';
 import SectionWrapper from '@/components/section-wrapper';
 import { formatContactCode } from '@/lib/contact-adapter';
-import { checkIsMobile } from '@/lib/utils';
 
 export type MyContactsProps = {
   contacts: {
     code: string;
-    url?: string;
     name: string;
+    url?: string;
+    copyValue?: string;
   }[];
 };
 
 const MyContacts = ({ contacts }: MyContactsProps) => {
   const { i18n } = useTranslation();
   const containerRef = React.useRef<HTMLDivElement>(null);
-  const isMobile = checkIsMobile();
 
   useGSAP(
     () => {
@@ -61,7 +60,7 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
 
     return (
       <div
-        className="grid grid-cols-1 items-center gap-6 text-start after:col-span-full after:block after:h-0.5 after:w-full after:bg-primary after:content-[''] last:after:hidden hover:text-blue-400 sm:grid-cols-[repeat(2,1fr)]"
+        className="grid grid-cols-1 items-center gap-6 text-start after:col-span-full after:block after:h-0.5 after:w-full after:bg-primary after:content-[''] last:after:hidden hover:text-blue-400 md:grid-cols-[repeat(2,1fr)]"
         id="slide-up"
         key={contact.code}
       >
@@ -79,9 +78,10 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
           ) : (
             <p className="text-2xl">{value}</p>
           )}
-          {isMobile ? null : (
-            <CopyButton className="text-inherit" value={contact.url || value} />
-          )}
+          <CopyButton
+            className="text-inherit"
+            value={contact.copyValue || contact.url || value}
+          />
         </div>
       </div>
     );
