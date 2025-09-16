@@ -80,8 +80,8 @@ describe('useGithubStars', () => {
     mockFetch.mockClear();
   });
 
-  describe('Запросы к GitHub API', () => {
-    it('должен успешно получать количество звезд репозитория', async () => {
+  describe('GitHub API requests', () => {
+    it('should successfully fetch repository star count', async () => {
       const mockData = { stargazers_count: MOCK_STAR_COUNT_42 };
       mockFetch.mockResolvedValueOnce(createMockResponse(mockData));
 
@@ -99,7 +99,7 @@ describe('useGithubStars', () => {
       );
     });
 
-    it('должен формировать правильный URL для разных владельцев и репозиториев', async () => {
+    it('should form correct URL for different owners and repositories', async () => {
       const mockData = { stargazers_count: MOCK_STAR_COUNT_100 };
       mockFetch.mockResolvedValueOnce(createMockResponse(mockData));
 
@@ -120,7 +120,7 @@ describe('useGithubStars', () => {
       expect(result.current.data).toBe(MOCK_STAR_COUNT_100);
     });
 
-    it('должен использовать правильный queryKey', async () => {
+    it('should use correct queryKey', async () => {
       const mockData = { stargazers_count: MOCK_STAR_COUNT_50 };
       mockFetch.mockResolvedValueOnce(createMockResponse(mockData));
 
@@ -136,8 +136,8 @@ describe('useGithubStars', () => {
     });
   });
 
-  describe('Обработка ошибок', () => {
-    it('должен обрабатывать ошибку 404', async () => {
+  describe('Error handling', () => {
+    it('should handle 404 error', async () => {
       mockFetch.mockResolvedValueOnce(
         createMockResponse(null, false, HTTP_STATUS_404)
       );
@@ -162,7 +162,7 @@ describe('useGithubStars', () => {
       );
     });
 
-    it('должен обрабатывать ошибку 403 (rate limit)', async () => {
+    it('should handle 403 error (rate limit)', async () => {
       mockFetch.mockResolvedValueOnce(
         createMockResponse(null, false, HTTP_STATUS_403)
       );
@@ -184,7 +184,7 @@ describe('useGithubStars', () => {
       );
     });
 
-    it('должен обрабатывать ошибку 500', async () => {
+    it('should handle 500 error', async () => {
       mockFetch.mockResolvedValueOnce(
         createMockResponse(null, false, HTTP_STATUS_500)
       );
@@ -206,7 +206,7 @@ describe('useGithubStars', () => {
       );
     });
 
-    it('должен обрабатывать ошибку сети', async () => {
+    it('should handle network error', async () => {
       mockFetch.mockRejectedValueOnce(new Error('Network error'));
 
       const { result } = renderHook(() => useGithubStars('facebook', 'react'), {
@@ -220,7 +220,7 @@ describe('useGithubStars', () => {
       expect(result.current.error).toEqual(new Error('Network error'));
     });
 
-    it('должен обрабатывать ошибку парсинга JSON', async () => {
+    it('should handle JSON parsing error', async () => {
       mockFetch.mockResolvedValueOnce({
         ...createMockResponse({}),
         json: () => Promise.reject(new Error('Invalid JSON')),
@@ -238,8 +238,8 @@ describe('useGithubStars', () => {
     });
   });
 
-  describe('Кэширование данных', () => {
-    it('должен использовать staleTime в 1 час', async () => {
+  describe('Data caching', () => {
+    it('should use staleTime of 1 hour', async () => {
       const mockData = { stargazers_count: MOCK_STAR_COUNT_42 };
       mockFetch.mockResolvedValueOnce(createMockResponse(mockData));
 
@@ -255,7 +255,7 @@ describe('useGithubStars', () => {
       expect(mockFetch).toHaveBeenCalledTimes(1);
     });
 
-    it('должен кэшировать данные для одинаковых queryKey', async () => {
+    it('should cache data for same queryKey', async () => {
       const mockData = { stargazers_count: MOCK_STAR_COUNT_100 };
       mockFetch.mockResolvedValue(createMockResponse(mockData));
 
@@ -288,7 +288,7 @@ describe('useGithubStars', () => {
       expect(result2.current.data).toBe(MOCK_STAR_COUNT_100);
     });
 
-    it('должен делать новый запрос для разных репозиториев', async () => {
+    it('should make new request for different repositories', async () => {
       const mockData1 = { stargazers_count: MOCK_STAR_COUNT_100 };
       const mockData2 = { stargazers_count: MOCK_STAR_COUNT_200 };
 
@@ -325,7 +325,7 @@ describe('useGithubStars', () => {
       expect(result2.current.data).toBe(MOCK_STAR_COUNT_200);
     });
 
-    it('должен использовать правильный queryKey для кэширования', async () => {
+    it('should use correct queryKey for caching', async () => {
       const mockData = { stargazers_count: MOCK_STAR_COUNT_42 };
       mockFetch.mockResolvedValue(createMockResponse(mockData));
 
@@ -346,8 +346,8 @@ describe('useGithubStars', () => {
     });
   });
 
-  describe('Состояния загрузки', () => {
-    it('должен показывать состояние загрузки', () => {
+  describe('Loading states', () => {
+    it('should show loading state', () => {
       mockFetch.mockImplementation(
         () =>
           new Promise(() => {
@@ -364,7 +364,7 @@ describe('useGithubStars', () => {
       expect(result.current.isError).toBe(false);
     });
 
-    it('должен переходить в состояние успеха после загрузки', async () => {
+    it('should transition to success state after loading', async () => {
       const mockData = { stargazers_count: MOCK_STAR_COUNT_42 };
       mockFetch.mockResolvedValueOnce(createMockResponse(mockData));
 
@@ -383,7 +383,7 @@ describe('useGithubStars', () => {
       expect(result.current.data).toBe(MOCK_STAR_COUNT_42);
     });
 
-    it('должен переходить в состояние ошибки при неудаче', async () => {
+    it('should transition to error state on failure', async () => {
       mockFetch.mockResolvedValueOnce(
         createMockResponse(null, false, HTTP_STATUS_404)
       );
