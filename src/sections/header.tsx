@@ -112,7 +112,11 @@ const Header = () => {
   };
 
   return (
-    <section className="relative h-screen w-screen" id="header">
+    <section
+      aria-label="Главная секция"
+      className="relative h-screen w-screen"
+      id="header"
+    >
       <header className="absolute top-1/3 z-30 flex w-full flex-col items-center gap-5">
         <h1
           className="h1 text-center text-5xl sm:text-6xl md:text-7xl"
