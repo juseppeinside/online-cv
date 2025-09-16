@@ -29,10 +29,5 @@ export default {
   testEnvironmentOptions: {
     customExportConditions: ['node', 'node-addons'],
   },
-  globals: {
-    'ts-jest': {
-      useESM: true,
-    },
-  },
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
 };
