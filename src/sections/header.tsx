@@ -16,7 +16,7 @@ const MOBILE_SCALE = 1.0;
 const DESKTOP_BG_SCALE = 1.2;
 const DESKTOP_FRONT_SCALE = 1.1;
 
-const FirstScreen = () => {
+const Header = () => {
   const { i18n } = useTranslation();
 
   const toggleTheme = () => {
@@ -50,7 +50,7 @@ const FirstScreen = () => {
         scrollTrigger: {
           pin: true,
           pinSpacing: false,
-          trigger: '#first-screen',
+          trigger: '#header',
           start: 'top top',
           end: 'bottom 20%',
           scrub: true,
@@ -101,7 +101,7 @@ const FirstScreen = () => {
           'start'
         );
     },
-    { scope: '#first-screen' }
+    { scope: '#header' }
   );
 
   const onClick = () => {
@@ -112,7 +112,7 @@ const FirstScreen = () => {
   };
 
   return (
-    <section className="relative h-screen w-screen" id="first-screen">
+    <section className="relative h-screen w-screen" id="header">
       <header className="absolute top-1/3 z-30 flex w-full flex-col items-center gap-5">
         <h1
           className="h1 text-center text-5xl sm:text-6xl md:text-7xl"
@@ -172,4 +172,4 @@ const FirstScreen = () => {
   );
 };
 
-export default FirstScreen;
+export default Header;

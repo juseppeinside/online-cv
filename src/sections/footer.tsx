@@ -7,7 +7,7 @@ import StarIcon from '@/assets/icons/star-ico.svg?react';
 import { useGithubStars } from '@/hooks/use-github-stars';
 import { cn, isDevMode } from '@/lib/utils';
 
-const End = () => {
+const Footer = () => {
   const { data: stars, isFetching } = useGithubStars(
     'juseppeinside',
     'online-cv'
@@ -61,7 +61,7 @@ const End = () => {
 
   return (
     <footer
-      className="flex h-72 w-full flex-col items-center justify-center gap-4"
+      className="flex h-72 w-full flex-col items-center justify-center gap-4 bg-background"
       ref={wrapperRef}
     >
       <p className="inline-block text-center">
@@ -96,4 +96,4 @@ const End = () => {
   );
 };
 
-export default End;
+export default Footer;
