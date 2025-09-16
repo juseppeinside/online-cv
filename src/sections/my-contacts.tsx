@@ -69,7 +69,7 @@ const MyContacts = ({ contacts }: MyContactsProps) => {
           {contact.url ? (
             <a
               aria-label={`Связаться через ${i18n.t(`contacts.${contact.name}`)}: ${value}`}
-              className="text-2xl"
+              className="cursor-none text-2xl"
               href={contact.url}
               target="_blank"
             >
