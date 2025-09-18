@@ -31,7 +31,6 @@ root.render(
 );
 
 const ANIMATION_DURATION = 100;
-
 requestAnimationFrame(() => {
   setTimeout(() => {
     removePreloader();
