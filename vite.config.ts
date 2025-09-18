@@ -6,6 +6,7 @@ import svgr from 'vite-plugin-svgr';
 
 const IMAGE_REGEX = /png|jpe?g|svg|gif|tiff|bmp|ico/i;
 const FONT_REGEX = /woff2?|eot|ttf|otf/i;
+const SVG_REGEX = /\.svg$/i;
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), svgr()],
@@ -27,6 +28,10 @@ export default defineConfig({
         assetFileNames: (assetInfo) => {
           const originalName = assetInfo.originalFileNames?.[0] ?? '';
           const ext = path.extname(originalName).slice(1).toLowerCase();
+
+          if (SVG_REGEX.test(originalName)) {
+            return 'icons/[name][extname]';
+          }
 
           if (IMAGE_REGEX.test(ext)) {
             return 'images/[name]-[hash][extname]';

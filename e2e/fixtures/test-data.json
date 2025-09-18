@@ -1,0 +1,85 @@
+{
+  "languages": {
+    "en": {
+      "name": "Shkividorov Maxim",
+      "aboutButton": "About me",
+      "contactsButton": "Contact me",
+      "stackTitle": "My stack",
+      "experienceTitle": "My experience",
+      "contactsTitle": "My contacts"
+    },
+    "ru": {
+      "name": "Шкивидоров Максим",
+      "aboutButton": "Обо мне",
+      "contactsButton": "Свяжитесь со мной",
+      "stackTitle": "мой стек",
+      "experienceTitle": "мой опыт",
+      "contactsTitle": "мои контакты"
+    }
+  },
+  "contacts": {
+    "phone": "+7 (999) 210-59-52",
+    "email": "maksimshkiv@mail.ru",
+    "telegram": "@soutjuseppe",
+    "linkedin": "in/maxim-shkividorov-182815144",
+    "github": "/juseppeinside"
+  },
+  "experience": {
+    "companies": [
+      "Sintez-AT",
+      "Simble",
+      "Sreda Solutions",
+      "Saint Petersburg Peter the Great Polytechnic University (SPbPU)"
+    ],
+    "positions": [
+      "Frontend Developer",
+      "Middle Frontend Developer",
+      "Junior Frontend Developer",
+      "Intern Frontend Developer"
+    ]
+  },
+  "stack": {
+    "frontend": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "next.js",
+      "MobX",
+      "Redux",
+      "tailwindcss",
+      "CSS",
+      "HTML",
+      "GSAP",
+      "Mapbox",
+      "leaflet",
+      "Radix UI",
+      "react-hook-form",
+      "vite",
+      "webpack",
+      "TanStack",
+      "AntDesign",
+      "Material UI",
+      "express",
+      "Storybook"
+    ],
+    "backend": ["Node.js", "NestJS"],
+    "database": ["PostgreSQL", "Prisma"],
+    "test": ["Jest", "Playwright", "Testing Library"],
+    "tools": [
+      "Git",
+      "Docker",
+      "Cursor",
+      "Obsidian",
+      "Postman",
+      "Swagger",
+      "Biome",
+      "ESLint",
+      "Prettier",
+      "Linear"
+    ]
+  },
+  "animations": {
+    "scrollTriggerDelay": 1000,
+    "gsapAnimationDelay": 500
+  }
+}

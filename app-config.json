@@ -52,11 +52,16 @@
           "HTML",
           "GSAP",
           "Mapbox",
+          "leaflet",
           "Radix UI",
           "react-hook-form",
           "vite",
           "webpack",
-          "TanStack"
+          "TanStack",
+          "AntDesign",
+          "Material UI",
+          "express",
+          "Storybook"
         ]
       },
       {
@@ -69,11 +74,22 @@
       },
       {
         "title": "test",
-        "items": ["Jest"]
+        "items": ["Jest", "Playwright", "Testing Library"]
       },
       {
         "title": "tools",
-        "items": ["Git", "Docker", "Cursor"]
+        "items": [
+          "Git",
+          "Docker",
+          "Cursor",
+          "Obsidian",
+          "Postman",
+          "Swagger",
+          "Biome",
+          "ESLint",
+          "Prettier",
+          "Linear"
+        ]
       }
     ]
   },
