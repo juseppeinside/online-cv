@@ -1,5 +1,6 @@
 /** biome-ignore-all lint/performance/noImgElement: <background images lazy loading> */
 import { useGSAP } from '@gsap/react';
+import { useNavigate } from '@tanstack/react-router';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -18,6 +19,7 @@ const DESKTOP_BG_SCALE = 1.2;
 const DESKTOP_FRONT_SCALE = 1.1;
 
 const Header = () => {
+  const navigate = useNavigate();
   const { i18n } = useTranslation();
 
   const toggleTheme = () => {
@@ -112,6 +114,11 @@ const Header = () => {
     });
   };
 
+  const handleQrCodeClick = () => {
+    // @ts-expect-error
+    navigate({ to: '/qr' });
+  };
+
   return (
     <section
       aria-label="Главная секция"
@@ -158,6 +165,7 @@ const Header = () => {
           <Button
             aria-label={'Link to HDR QR code'}
             className="flex size-8 items-center justify-center rounded-full p-0 text-md uppercase"
+            onClick={handleQrCodeClick}
           >
             <QrCodeIcon className="size-5 text-secondary" />
           </Button>
