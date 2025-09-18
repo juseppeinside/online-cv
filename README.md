@@ -112,11 +112,11 @@ npm run dev
 - [ ] AI reviewing integration
 
 ### 📱 Additional Features
+- [x] HDR QR code
 - [ ] PWA support
 - [ ] Offline mode
 - [ ] Share API for social networks
 - [ ] CV export to PDF
-- [ ] HDR QR code
 
 ## 📄 License
 
