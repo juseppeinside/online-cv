@@ -47,7 +47,8 @@
   },
   "tooltip": {
     "language": "Language",
-    "theme": "Theme"
+    "theme": "Theme",
+    "qrcode": "HDR QR code"
   },
   "copy": {
     "button": "Copy",

@@ -41,7 +41,7 @@ const Tooltip = ({ text, children }: TooltipProps) => {
     >
       {children}
       <div
-        className="absolute top-full left-1/2 z-10 mx-auto hidden translate-x-[-50%] rounded-lg bg-background-primary p-2 opacity-0"
+        className="absolute top-full left-1/2 z-10 mx-auto hidden translate-x-[-50%] whitespace-nowrap rounded-lg bg-background-primary p-2 opacity-0"
         id={id}
         role="tooltip"
       >

@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslation } from 'react-i18next';
+import QrCodeIcon from '@/assets/icons/qrcode-ico.svg?react';
 import Button from '@/components/button';
 import Tooltip from '@/components/tooltip';
 import { checkIsMobile } from '@/lib/utils';
@@ -153,6 +154,15 @@ const Header = () => {
         className="absolute top-10 right-10 z-30 flex items-center gap-3"
         id="tools"
       >
+        <Tooltip text={i18n.t('tooltip.qrcode')}>
+          <Button
+            aria-label={'Link to HDR QR code'}
+            className="flex size-8 items-center justify-center rounded-full p-0 text-md uppercase"
+          >
+            <QrCodeIcon className="size-5 text-secondary" />
+          </Button>
+        </Tooltip>
+
         <Tooltip text={i18n.t('tooltip.language')}>
           <Button
             aria-label={`Toggle language to ${nextLanguage}`}
@@ -165,10 +175,10 @@ const Header = () => {
         <Tooltip text={i18n.t('tooltip.theme')}>
           <Button
             aria-label="Toggle theme"
-            className="flex h-8 w-8 rounded-full px-0"
+            className="flex size-8 rounded-full px-0"
             onClick={toggleTheme}
           >
-            <div className="theme-button h-8 w-8" />
+            <div className="theme-button size-8" />
           </Button>
         </Tooltip>
       </nav>
