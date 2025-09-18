@@ -124,6 +124,7 @@ const QrPage = () => {
   );
 };
 
-export const Route = createFileRoute('/qr')({
+// biome-ignore lint/suspicious/noExplicitAny: <tanstack router required>
+export const Route = createFileRoute('/qr' as any)({
   component: QrPage,
 });

@@ -47,6 +47,7 @@ const HomePage = () => {
   );
 };
 
-export const Route = createFileRoute('/')({
+// biome-ignore lint/suspicious/noExplicitAny: <tanstack router required>
+export const Route = createFileRoute('/' as any)({
   component: HomePage,
 });
