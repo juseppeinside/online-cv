@@ -51,16 +51,32 @@
       "HTML",
       "GSAP",
       "Mapbox",
+      "leaflet",
       "Radix UI",
       "react-hook-form",
       "vite",
       "webpack",
-      "TanStack"
+      "TanStack",
+      "AntDesign",
+      "Material UI",
+      "express",
+      "Storybook"
     ],
     "backend": ["Node.js", "NestJS"],
     "database": ["PostgreSQL", "Prisma"],
-    "test": ["Jest"],
-    "tools": ["Git", "Docker", "Cursor"]
+    "test": ["Jest", "Playwright", "Testing Library"],
+    "tools": [
+      "Git",
+      "Docker",
+      "Cursor",
+      "Obsidian",
+      "Postman",
+      "Swagger",
+      "Biome",
+      "ESLint",
+      "Prettier",
+      "Linear"
+    ]
   },
   "animations": {
     "scrollTriggerDelay": 1000,
