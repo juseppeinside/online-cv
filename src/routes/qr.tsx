@@ -45,7 +45,13 @@ const QrPage = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-yellow-600 via-yellow-900 to-yellow-600 p-4">
       <div className="w-full max-w-4xl">
-        <h1 className="h2 mb-10 text-center text-white">HDR QR Code</h1>
+        <h1 className="h2 mb-4 text-center text-white">
+          GitHub{' '}
+          <span className="bg-gradient-to-r from-red-500 via-green-500 to-blue-500 bg-clip-text text-transparent">
+            HDR
+          </span>{' '}
+          QR Code
+        </h1>
 
         <div className="flex flex-col items-center justify-center gap-8 lg:flex-row">
           <div className="relative h-60 w-60 overflow-hidden rounded-lg bg-black shadow-2xl">
