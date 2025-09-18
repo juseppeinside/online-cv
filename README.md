@@ -116,7 +116,7 @@ npm run dev
 - [ ] Offline mode
 - [ ] Share API for social networks
 - [ ] CV export to PDF
-- [ ] QR code for contacts
+- [ ] HDR QR code
 
 ## 📄 License
 
