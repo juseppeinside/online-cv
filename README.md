@@ -109,7 +109,7 @@ npm run dev
 - [ ] Error tracking (Sentry)
 - [ ] Analytics integration
 - [ ] Automatic deployment
-- [ ] AI reviewing integration
+- [x] AI reviewing integration
 
 ### 📱 Additional Features
 - [x] HDR QR code
