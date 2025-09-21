@@ -1,4 +1,5 @@
 import { useGSAP } from '@gsap/react';
+import { useLocation } from '@tanstack/react-router';
 import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -18,6 +19,8 @@ const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
 
 const Layout = ({ children }: LayoutProps) => {
   const isMobile = checkIsMobile();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useGSAP(() => {
     ScrollSmoother.create({
@@ -45,9 +48,9 @@ const Layout = ({ children }: LayoutProps) => {
       <div id="smooth-wrapper">
         <div id="smooth-content">{children}</div>
       </div>
-      {!isMobile && <Scrollbar />}
+      {isHomePage && !isMobile && <Scrollbar />}
       {!(isDevMode || isMobile) && <CustomCursor />}
-      {!isMobile && <SnowBackground />}
+      {isHomePage && !isMobile && <SnowBackground />}
     </>
   );
 };

@@ -142,9 +142,10 @@
     gtag("config", "G-L3SRNGM2ZL");
   </script>
 
+    
+
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
 
     <div id="preloader">
       <div id="loading-indicator"></div>
@@ -155,6 +156,15 @@
         alt="Portfolio portrait"
       />
     </div>
+
+    <script>
+      if (window.location.pathname !== '/') {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.style.display = 'none';
+        }
+      }
+    </script>
 
     <style>
       #loading-indicator {
@@ -219,5 +229,8 @@
         }
       }
     </style>
+
+    <script type="module" src="/src/main.tsx"></script>
+
   </body>
 </html>

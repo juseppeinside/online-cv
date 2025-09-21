@@ -15,6 +15,7 @@ EN / [RU](README.ru.md)
 - **Animations**: GSAP
 - **Build Tool**: Vite
 - **Linting**: Biome
+- **Test**: Playwright, Jest, Testing Library
 
 ## 🚀 Quick Start
 
@@ -47,13 +48,13 @@ npm run dev
 - [x] Basic TypeScript and Tailwind configuration
 
 ### 🎨 UI/UX Components
-- [ ] Basic components with hover effects (Button...)
+- [x] Basic components with hover effects (Button...)
 - [x] Layout component for general structure
 - [x] CustomCursor with interactive effects
 - [x] SnowBackground for atmospheric effects
+- [x] Tooltip component
 - [ ] Loading/preloader component
 - [ ] Modal windows
-- [ ] Tooltip component
 - [ ] Navigation menu
 - [ ] Mobile menu
 
@@ -84,18 +85,18 @@ npm run dev
 - [x] Sitemap generation
 
 ### 🎯 Performance
-- [ ] Lazy loading for images
+- [x] Lazy loading for images
 - [x] Code splitting for components
 - [x] Bundle size optimization
-- [ ] Service Worker for caching
 - [x] WebP/AVIF image support
 - [x] Critical CSS inline
 - [x] Preload key resources
+- [ ] Service Worker for caching
 
 ### 🧪 Testing
-- [ ] Unit tests for components
+- [x] Unit tests for components
+- [x] E2E tests with Playwright
 - [ ] Integration tests
-- [ ] E2E tests with Playwright
 - [ ] Visual regression tests
 - [ ] Performance tests
 - [ ] Accessibility tests
@@ -108,14 +109,14 @@ npm run dev
 - [ ] Error tracking (Sentry)
 - [ ] Analytics integration
 - [ ] Automatic deployment
-- [ ] AI reviewing integration
+- [x] AI reviewing integration
 
 ### 📱 Additional Features
+- [x] HDR QR code
 - [ ] PWA support
 - [ ] Offline mode
 - [ ] Share API for social networks
 - [ ] CV export to PDF
-- [ ] QR code for contacts
 
 ## 📄 License
 
