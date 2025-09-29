@@ -12,7 +12,7 @@
   "stack": {
     "frontend": "Frontend",
     "backend": "Backend",
-    "database": "Database",
+    "database": "Databases",
     "test": "Test",
     "tools": "Tools"
   },

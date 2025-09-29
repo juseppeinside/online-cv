@@ -12,7 +12,7 @@
   "stack": {
     "frontend": "Frontend",
     "backend": "Backend",
-    "database": "База данных",
+    "database": "Базы данных",
     "test": "Тесты",
     "tools": "Инструменты"
   },

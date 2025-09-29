@@ -11,7 +11,7 @@ declare const jest: {
 };
 
 const TECHNOLOGY_REGEX = /React|TypeScript|JavaScript|Node\.js|PostgreSQL|Jest/;
-const BLOCK_TITLES_REGEX = /Frontend|Backend|База данных|Тесты/;
+const BLOCK_TITLES_REGEX = /Frontend|Backend|Базы данных|Тесты/;
 const EXPECTED_SUBHEADINGS_COUNT = 4;
 const EXPECTED_ICONS_COUNT = 6;
 
@@ -107,7 +107,7 @@ const renderWithI18n = (component: React.ReactElement, language = 'ru') => {
             stack: {
               frontend: 'Frontend',
               backend: 'Backend',
-              database: 'База данных',
+              database: 'Базы данных',
               test: 'Тесты',
               tools: 'Инструменты',
             },
@@ -153,7 +153,7 @@ describe('MyStack', () => {
 
       expect(screen.getByText('Frontend')).toBeInTheDocument();
       expect(screen.getByText('Backend')).toBeInTheDocument();
-      expect(screen.getByText('База данных')).toBeInTheDocument();
+      expect(screen.getByText('Базы данных')).toBeInTheDocument();
       expect(screen.getByText('Тесты')).toBeInTheDocument();
     });
 
@@ -212,7 +212,7 @@ describe('MyStack', () => {
         screen.getByLabelText('Технологии в категории Backend')
       ).toBeInTheDocument();
       expect(
-        screen.getByLabelText('Технологии в категории База данных')
+        screen.getByLabelText('Технологии в категории Базы данных')
       ).toBeInTheDocument();
       expect(
         screen.getByLabelText('Технологии в категории Тесты')
@@ -227,7 +227,7 @@ describe('MyStack', () => {
       expect(screen.getByText('мой стек')).toBeInTheDocument();
       expect(screen.getByText('Frontend')).toBeInTheDocument();
       expect(screen.getByText('Backend')).toBeInTheDocument();
-      expect(screen.getByText('База данных')).toBeInTheDocument();
+      expect(screen.getByText('Базы данных')).toBeInTheDocument();
       expect(screen.getByText('Тесты')).toBeInTheDocument();
     });
 
