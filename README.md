@@ -104,7 +104,6 @@ npm run dev
 ### 🚀 Deploy and DevOps
 - [ ] CI/CD pipeline setup
 - [ ] Docker containerization
-- [ ] CDN setup
 - [ ] Performance monitoring
 - [ ] Error tracking (Sentry)
 - [ ] Analytics integration

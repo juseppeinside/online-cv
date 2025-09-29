@@ -105,7 +105,6 @@ npm run dev
 ### 🚀 Деплой и DevOps
 - [ ] CI/CD pipeline настройка
 - [ ] Docker контейнеризация
-- [ ] Настройка CDN
 - [ ] Мониторинг производительности
 - [ ] Error tracking (Sentry)
 - [ ] Analytics интеграция
