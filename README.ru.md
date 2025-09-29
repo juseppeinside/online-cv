@@ -97,7 +97,7 @@ npm run dev
 ### 🧪 Тестирование
 - [x] Unit тесты для компонентов
 - [x] E2E тесты с Playwright
-- [ ] Интеграционные тесты тесты
+- [ ] Интеграционные тесты
 - [ ] Visual regression тесты
 - [ ] Performance тесты
 - [ ] Accessibility тесты
