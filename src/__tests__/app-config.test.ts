@@ -2,7 +2,7 @@ import appConfig from '../../app-config.json' with { type: 'json' };
 
 const EXPECTED_EXPERIENCE_COUNT = 4;
 const EXPECTED_BLOCKS_COUNT = 5;
-const EXPECTED_CONTACTS_COUNT = 5;
+const EXPECTED_CONTACTS_COUNT = 2;
 const EXPECTED_ABOUT_ME_YEARS = 6;
 const EXPECTED_ABOUT_ME_HOURS = 10;
 const EXPECTED_ABOUT_ME_PROJECT_COUNT = 10;
@@ -236,13 +236,7 @@ describe('app-config.json validation', () => {
       });
 
       it('should have expected contact types', () => {
-        const expectedNames = [
-          'telegram',
-          'linkedin',
-          'github',
-          'phone',
-          'email',
-        ];
+        const expectedNames = ['linkedin', 'github'];
         const actualNames = appConfig.myContacts.contacts.map(
           (contact) => contact.name
         );

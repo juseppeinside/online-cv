@@ -46,7 +46,6 @@ test.describe('Accessibility (a11y)', () => {
     await helpers.scrollToSection(page, selectors.contacts);
 
     const externalLinks = [
-      selectors.telegramLink,
       selectors.linkedinLink,
       'a[href*="github.com"]:not([href*="online-cv"])', // Только GitHub профиль, не репозиторий
     ];

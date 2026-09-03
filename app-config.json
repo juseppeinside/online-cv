@@ -96,11 +96,6 @@
   "myContacts": {
     "contacts": [
       {
-        "code": "@soutjuseppe",
-        "url": "https://t.me/soutjuseppe",
-        "name": "telegram"
-      },
-      {
         "code": "in/maxim-shkividorov-182815144",
         "url": "https://www.linkedin.com/in/maxim-shkividorov-182815144/",
         "name": "linkedin"
@@ -109,17 +104,6 @@
         "code": "/juseppeinside",
         "url": "https://github.com/juseppeinside",
         "name": "github"
-      },
-      {
-        "code": "+79992105952",
-        "name": "phone",
-        "copyValue": "+79992105952"
-      },
-      {
-        "code": "maksimshkiv@mail.ru",
-        "url": "mailto:maksimshkiv@mail.ru",
-        "name": "email",
-        "copyValue": "maksimshkiv@mail.ru"
       }
     ]
   }
