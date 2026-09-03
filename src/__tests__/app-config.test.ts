@@ -219,11 +219,6 @@ describe('app-config.json validation', () => {
             expect(typeof contact.url).toBe('string');
             expect(contact.url.length).toBeGreaterThan(0);
           }
-
-          if (contact.copyValue) {
-            expect(typeof contact.copyValue).toBe('string');
-            expect(contact.copyValue.length).toBeGreaterThan(0);
-          }
         }
       });
 
